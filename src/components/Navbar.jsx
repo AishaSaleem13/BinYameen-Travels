@@ -4,7 +4,7 @@ export default function Navbar() {
     py-3
     rounded-full
     text-white
-    text-[15px]
+    text-[25px]
     font-medium
     tracking-wide
 
