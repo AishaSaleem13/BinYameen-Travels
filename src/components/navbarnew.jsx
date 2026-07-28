@@ -44,22 +44,16 @@ function Navbarnew() {
             <li><a>About us</a></li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-white normal-case">BinYameen</a>
+        <a className="btn btn-ghost text-xl text-white normal-case">Bin Yameen</a>
       </div>
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2 text-white">
           <li><a className="hover:bg-white/10">Home</a></li>
-          <li>
-            <details>
-              <summary className="hover:bg-white/10">Packages</summary>
-              <ul className="p-2 bg-base-100 text-base-content w-44 z-1 rounded-box">
-                <li><a>Umrah packages</a></li>
-                <li><a>Hajj packages</a></li>
-                <li><a>Northern tours</a></li>
-              </ul>
-            </details>
-          </li>
+          <li><a className="hover:bg-white/10">Umrah Packages</a></li>
+       <li><a className="hover:bg-white/10">International Tours</a></li>
+         
+           <li><a className="hover:bg-white/10">Northern Tours</a></li>
           <li><a className="hover:bg-white/10">Contact</a></li>
           <li><a className="hover:bg-white/10">About us</a></li>
         </ul>

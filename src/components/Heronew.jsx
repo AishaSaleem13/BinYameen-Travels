@@ -50,12 +50,12 @@ function Heronew() {
           </div>
 
           <h1 className="font-voice text-white text-4xl lg:text-6xl font-medium leading-[1.1] mb-5 max-w-2xl">
-      Welcome to BinYameen Travels
+      Welcome to Bin Yameen Travels
           </h1>
 
           <span className="font-sans text-white/80 text-base lg:text-lg max-w-xl mb-10 leading-relaxed">
             <TextType 
-  text={["Trusted Hajj, Umrah and northern Pakistan tours, planned with heart and delivered with care."]}
+  text={["Trusted  Umrah and northern Pakistan tours, planned with heart and delivered with care."]}
   typingSpeed={75}
   pauseDuration={1500}
   showCursor

@@ -30,7 +30,7 @@ export default function BookingWidget() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto -mt-16 relative z-30 px-4">
+    <div className="w-full max-w-5xl mx-auto -mt-16 relative z-30 px-4 ">
       {/* ---------- TAB ROW ---------- */}
       <div className="flex bg-gray-50 rounded-t-xl overflow-hidden shadow-lg">
         {TABS.map((tab) => (
