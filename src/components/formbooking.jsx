@@ -1,182 +1,331 @@
 "use client";
 
 import { useState } from "react";
+import {
+  Building2,
+  Plane,
+  Mountain,
+  ClipboardEdit,
+  MapPin,
+  CalendarRange,
+  Users,
+  Package as PackageIcon,
+  User,
+  Phone,
+  Mail,
+  MessageSquare,
+  Send,
+  ShieldCheck,
+} from "lucide-react";
+
+// ---------- static config ----------
 
 const TABS = [
-  { id: "umrah", label: "Umrah packages", icon: "🕋" },
-  { id: "northern", label: "Northern tours", icon: "🏔️" },
-  { id: "custom", label: "Custom booking", icon: "📝" },
+  { id: "umrah", label: "Umrah", icon: Building2 },
+  { id: "international", label: "International", icon: Plane },
+  { id: "pakistan", label: "Pakistan Tours", icon: Mountain },
+  { id: "custom", label: "Custom Trip", icon: ClipboardEdit },
 ];
 
 const CITIES = ["Karachi", "Lahore", "Islamabad", "Peshawar", "Multan"];
-const DESTINATIONS = ["Hunza", "Skardu", "Naran", "Swat", "Fairy Meadows", "Kaghan"];
+const NORTHERN_DESTINATIONS = ["Hunza", "Skardu", "Naran", "Swat", "Fairy Meadows", "Kaghan"];
+const INTL_DESTINATIONS = ["Dubai", "Turkey", "Malaysia", "Thailand", "UK", "Saudi Arabia"];
+
+const TRAVELER_OPTIONS = ["1 Adult", "2 Adults", "Family (4+)", "Group (10+)"];
+const PACKAGE_OPTIONS = ["Standard", "VIP / Premium", "Economy", "Custom"];
+const BUDGET_OPTIONS = ["Under PKR 100,000", "PKR 100,000 – 300,000", "PKR 300,000+", "Not sure yet"];
 
 export default function BookingWidget() {
   const [activeTab, setActiveTab] = useState("umrah");
-  const [tripType, setTripType] = useState("individual");
 
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
-  const [departureDate, setDepartureDate] = useState("");
-  const [returnDate, setReturnDate] = useState("");
-  const [travelers, setTravelers] = useState("1 traveler, Standard");
-  const [promoCode, setPromoCode] = useState("");
-  const [useInstallments, setUseInstallments] = useState(false);
+  // one shared form-data object — keys are only read for the fields
+  // that are actually rendered for the current tab, so nothing leaks
+  // between tabs when the user switches.
+  const [formData, setFormData] = useState({
+    travelType: "Individual",
+    from: "",
+    destination: "",
+    travelDates: "",
+    travelers: "",
+    package: "",
+    tripRequirements: "",
+    budgetRange: "",
+    name: "",
+    whatsapp: "",
+    email: "",
+    message: "",
+  });
 
-  const isNorthern = activeTab === "northern";
+  const updateField = (key) => (e) =>
+    setFormData((prev) => ({ ...prev, [key]: e.target.value }));
 
-  const handleSearch = () => {
-    console.log({ activeTab, tripType, from, to, departureDate, returnDate, travelers, promoCode, useInstallments });
+  const handleSubmit = () => {
+    console.log({ activeTab, ...formData });
+    // TODO: wire this up to your API route / email service / WhatsApp deep link
+  };
+
+  // Small reusable field shell: label on top, icon + control below.
+  // Keeping this as one component means every field looks consistent
+  // without repeating the wrapper markup everywhere.
+  const Field = ({ label, icon: Icon, children }) => (
+    <div className="flex-1 min-w-[140px] border border-gray-200 rounded-md px-3 py-2">
+      <label className="block text-xs text-gray-400 mb-1">{label}</label>
+      <div className="flex items-center gap-2">
+        <Icon className="w-4 h-4 text-gray-400 shrink-0" />
+        {children}
+      </div>
+    </div>
+  );
+
+  const selectClasses = "flex-1 min-w-0 text-sm outline-none bg-transparent text-gray-800";
+  const inputClasses = "flex-1 min-w-0 text-sm outline-none placeholder:text-gray-400 text-gray-800";
+
+  // ---------- trip-specific fields, one block per tab ----------
+  // This is the part that makes the form "adapt" — each tab renders
+  // a different set of Field components instead of one fixed layout.
+
+  const renderTripFields = () => {
+    switch (activeTab) {
+      case "umrah":
+        return (
+          <>
+            <Field label="Travel Type" icon={Users}>
+              <select value={formData.travelType} onChange={updateField("travelType")} className={selectClasses}>
+                <option>Individual</option>
+                <option>Family / Group</option>
+              </select>
+            </Field>
+
+            <Field label="From" icon={MapPin}>
+              <select value={formData.from} onChange={updateField("from")} className={selectClasses}>
+                <option value="">Select city</option>
+                {CITIES.map((c) => <option key={c}>{c}</option>)}
+              </select>
+            </Field>
+
+            <Field label="Travel Dates" icon={CalendarRange}>
+              <input
+                type="date"
+                value={formData.travelDates}
+                onChange={updateField("travelDates")}
+                className={inputClasses}
+              />
+            </Field>
+
+            <Field label="Travelers" icon={Users}>
+              <select value={formData.travelers} onChange={updateField("travelers")} className={selectClasses}>
+                <option value="">Select</option>
+                {TRAVELER_OPTIONS.map((t) => <option key={t}>{t}</option>)}
+              </select>
+            </Field>
+
+            <Field label="Package" icon={PackageIcon}>
+              <select value={formData.package} onChange={updateField("package")} className={selectClasses}>
+                <option value="">Select package</option>
+                {PACKAGE_OPTIONS.map((p) => <option key={p}>{p}</option>)}
+              </select>
+            </Field>
+          </>
+        );
+
+      case "international":
+        return (
+          <>
+            <Field label="Destination" icon={MapPin}>
+              <select value={formData.destination} onChange={updateField("destination")} className={selectClasses}>
+                <option value="">Where to?</option>
+                {INTL_DESTINATIONS.map((d) => <option key={d}>{d}</option>)}
+              </select>
+            </Field>
+
+            <Field label="From City" icon={MapPin}>
+              <select value={formData.from} onChange={updateField("from")} className={selectClasses}>
+                <option value="">Select city</option>
+                {CITIES.map((c) => <option key={c}>{c}</option>)}
+              </select>
+            </Field>
+
+            <Field label="Travel Dates" icon={CalendarRange}>
+              <input
+                type="date"
+                value={formData.travelDates}
+                onChange={updateField("travelDates")}
+                className={inputClasses}
+              />
+            </Field>
+
+            <Field label="Travelers" icon={Users}>
+              <select value={formData.travelers} onChange={updateField("travelers")} className={selectClasses}>
+                <option value="">Select</option>
+                {TRAVELER_OPTIONS.map((t) => <option key={t}>{t}</option>)}
+              </select>
+            </Field>
+          </>
+        );
+
+      case "pakistan":
+        return (
+          <>
+            <Field label="Destination" icon={Mountain}>
+              <select value={formData.destination} onChange={updateField("destination")} className={selectClasses}>
+                <option value="">Where to?</option>
+                {NORTHERN_DESTINATIONS.map((d) => <option key={d}>{d}</option>)}
+              </select>
+            </Field>
+
+            <Field label="Travel Dates" icon={CalendarRange}>
+              <input
+                type="date"
+                value={formData.travelDates}
+                onChange={updateField("travelDates")}
+                className={inputClasses}
+              />
+            </Field>
+
+            <Field label="Travelers" icon={Users}>
+              <select value={formData.travelers} onChange={updateField("travelers")} className={selectClasses}>
+                <option value="">Select</option>
+                {TRAVELER_OPTIONS.map((t) => <option key={t}>{t}</option>)}
+              </select>
+            </Field>
+          </>
+        );
+
+      case "custom":
+        return (
+          <>
+            <Field label="Where do you want to go?" icon={MapPin}>
+              <input
+                type="text"
+                placeholder="Type a destination"
+                value={formData.destination}
+                onChange={updateField("destination")}
+                className={inputClasses}
+              />
+            </Field>
+
+            <Field label="Travel Dates" icon={CalendarRange}>
+              <input
+                type="date"
+                value={formData.travelDates}
+                onChange={updateField("travelDates")}
+                className={inputClasses}
+              />
+            </Field>
+
+            <Field label="Travelers" icon={Users}>
+              <select value={formData.travelers} onChange={updateField("travelers")} className={selectClasses}>
+                <option value="">Select</option>
+                {TRAVELER_OPTIONS.map((t) => <option key={t}>{t}</option>)}
+              </select>
+            </Field>
+
+            <Field label="Budget Range (Optional)" icon={PackageIcon}>
+              <select value={formData.budgetRange} onChange={updateField("budgetRange")} className={selectClasses}>
+                <option value="">Select</option>
+                {BUDGET_OPTIONS.map((b) => <option key={b}>{b}</option>)}
+              </select>
+            </Field>
+          </>
+        );
+
+      default:
+        return null;
+    }
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto -mt-16 relative z-30 px-4 ">
+    <div className="w-full max-w-5xl mx-auto -mt-16 relative z-30 px-4">
       {/* ---------- TAB ROW ---------- */}
       <div className="flex bg-gray-50 rounded-t-xl overflow-hidden shadow-lg">
-        {TABS.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-colors
-              ${
-                activeTab === tab.id
-                  ? "bg-white text-black"
-                  : "bg-gray-50 text-gray-500 hover:bg-gray-100"
-              }`}
-          >
-            <span aria-hidden="true">{tab.icon}</span>
-            {tab.label}
-          </button>
-        ))}
+        {TABS.map((tab) => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
+          return (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              // flex-1 so all 4 tabs share width evenly instead of hugging their text
+              className={`flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-medium transition-colors
+                ${
+                  isActive
+                    ? "bg-[#335C67] text-white"       // active tab: dark teal, matches the button color
+                    : "bg-gray-50 text-gray-500 hover:bg-gray-100"
+                }`}
+            >
+              <Icon className="w-4 h-4" aria-hidden="true" />
+              {tab.label}
+            </button>
+          );
+        })}
       </div>
 
       {/* ---------- CARD BODY ---------- */}
       <div className="bg-white rounded-b-xl shadow-lg px-6 py-6">
-
-        {/* --- radio row: trip type, like Return / One way / Multi-city --- */}
-        <div className="flex items-center gap-8 mb-5">
-          {[
-            { id: "individual", label: "Individual" },
-            { id: "family", label: "Family / group" },
-     
-          ].map((opt) => (
-            <label key={opt.id} className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
-              <input
-                type="radio"
-                name="tripType"
-                checked={tripType === opt.id}
-                onChange={() => setTripType(opt.id)}
-                className="accent-indigo-700 w-4 h-4"
-              />
-              {opt.label}
-            </label>
-          ))}
+        {/* --- trip-specific fields: wraps responsively, count varies per tab --- */}
+        <div className="flex flex-col md:flex-row md:flex-wrap gap-3 mb-5">
+          {renderTripFields()}
         </div>
 
-        {/* --- single horizontal field bar --- */}
-        <div className="flex flex-col md:flex-row md:items-stretch border border-gray-200 rounded-md divide-y md:divide-y-0 md:divide-x divide-gray-200">
-
-          {/* From / To with swap icon in the middle, exactly like Qatar's layout */}
-          <div className="flex items-center flex-1 px-4 py-3 gap-3 min-w-0">
-            <input
-              list="from-options"
-              value={from}
-              onChange={(e) => setFrom(e.target.value)}
-              placeholder="From"
-              className="flex-1 min-w-0 text-sm outline-none placeholder:text-gray-400"
-            />
-            <datalist id="from-options">
-              {CITIES.map((c) => <option key={c} value={c} />)}
-            </datalist>
-
-            <button
-              type="button"
-              aria-label="Swap origin and destination"
-              onClick={() => { setFrom(to); setTo(from); }}
-              className="text-gray-400 hover:text-gray-600 shrink-0"
-            >
-              ⇄
-            </button>
-
-            <input
-              list="to-options"
-              value={to}
-              onChange={(e) => setTo(e.target.value)}
-              placeholder="To"
-              className="flex-1 min-w-0 text-sm outline-none placeholder:text-gray-400"
-            />
-            <datalist id="to-options">
-              {(isNorthern ? DESTINATIONS : ["Makkah", "Madinah"]).map((d) => <option key={d} value={d} />)}
-            </datalist>
-          </div>
-
-          {/* Departure date */}
-          <div className="flex flex-col justify-center px-4 py-3 min-w-[140px]">
-            <label className="text-xs text-gray-400">Departure</label>
-            <input
-              type="date"
-              value={departureDate}
-              onChange={(e) => setDepartureDate(e.target.value)}
-              className="text-sm outline-none"
-            />
-          </div>
-
-          {/* Return / end date */}
-          <div className="flex flex-col justify-center px-4 py-3 min-w-[140px]">
-            <label className="text-xs text-gray-400">Return</label>
-            <input
-              type="date"
-              value={returnDate}
-              onChange={(e) => setReturnDate(e.target.value)}
-              className="text-sm outline-none"
-            />
-          </div>
-
-          {/* Travelers / class, like "Passengers / Class" */}
-          <div className="flex flex-col justify-center px-4 py-3 min-w-[180px]">
-            <label className="text-xs text-gray-400">Travelers / package</label>
-            <select
-              value={travelers}
-              onChange={(e) => setTravelers(e.target.value)}
-              className="text-sm outline-none bg-transparent"
-            >
-              <option>1 traveler, Standard</option>
-              <option>1 traveler, VIP</option>
-              <option>2 travelers, Standard</option>
-              <option>Family (4+), Standard</option>
-              <option>Group (10+), Standard</option>
-            </select>
-          </div>
-        </div>
-
-        {/* ---------- bottom row: checkbox, promo, search ---------- */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-5">
-          <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={useInstallments}
-              onChange={(e) => setUseInstallments(e.target.checked)}
-              className="w-4 h-4 accent-indigo-700"
-            />
-            Pay in installments
-          </label>
-
-          <div className="flex items-center gap-2 md:ml-auto">
-            <span className="text-gray-400">+</span>
+        {/* --- shared contact block, same across every tab --- */}
+        <div className="flex flex-col md:flex-row md:flex-wrap gap-3 pt-5 border-t border-gray-100">
+          <Field label="Your Name" icon={User}>
             <input
               type="text"
-              placeholder="Add promo code"
-              value={promoCode}
-              onChange={(e) => setPromoCode(e.target.value)}
-              className="text-sm text-gray-600 outline-none placeholder:text-gray-400 w-40"
+              placeholder="Enter your full name"
+              value={formData.name}
+              onChange={updateField("name")}
+              className={inputClasses}
             />
-          </div>
+          </Field>
+
+          <Field label="WhatsApp Number" icon={Phone}>
+            <input
+              type="tel"
+              placeholder="03XXXXXXXXX"
+              value={formData.whatsapp}
+              onChange={updateField("whatsapp")}
+              className={inputClasses}
+            />
+          </Field>
+
+          <Field label="Email Address" icon={Mail}>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={updateField("email")}
+              className={inputClasses}
+            />
+          </Field>
+
+          <Field
+            label={activeTab === "custom" ? "Trip Requirements" : "Additional Message (Optional)"}
+            icon={MessageSquare}
+          >
+            <input
+              type="text"
+              placeholder="Any special requirements?"
+              value={activeTab === "custom" ? formData.tripRequirements : formData.message}
+              onChange={updateField(activeTab === "custom" ? "tripRequirements" : "message")}
+              className={inputClasses}
+            />
+          </Field>
+        </div>
+
+        {/* ---------- bottom row: trust line + submit ---------- */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mt-5">
+          <p className="flex items-center gap-2 text-xs text-gray-400">
+            <ShieldCheck className="w-4 h-4" />
+            Your information is safe with us
+          </p>
 
           <button
-            onClick={handleSearch}
-            className="bg-[#335C67] hover:bggray-500 text-black font-medium text-sm px-8 py-3 rounded-full transition-colors w-full md:w-auto"
+            onClick={handleSubmit}
+            className="flex items-center justify-center gap-2 bg-[#335C67] hover:bg-[#2a4a53] text-white font-medium text-sm px-8 py-3 rounded-full transition-colors w-full md:w-auto"
           >
-            {isNorthern ? "Search tours" : "Search packages"}
+            <Send className="w-4 h-4" />
+            Send Enquiry
           </button>
         </div>
       </div>
