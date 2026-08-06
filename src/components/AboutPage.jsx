@@ -3,6 +3,7 @@
 
 import React from "react";
 import { HeartHandshake, Trophy, Leaf, Menu } from "lucide-react";
+import Image from "next/image";
 
 export default function AboutUsPage() {
 
