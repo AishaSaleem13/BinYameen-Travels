@@ -113,7 +113,7 @@ function Navbarnew() {
 
             <li>
               <Link
-                href="/tours/international"
+                href="/international"
                 className="hover:bg-white/10"
               >
                 International Tours
@@ -259,7 +259,7 @@ function Navbarnew() {
               </li>
 
               <li>
-                <Link href="/tours/international">
+                <Link href="/international">
                   International Tours
                 </Link>
               </li>

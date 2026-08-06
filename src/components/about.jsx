@@ -17,8 +17,8 @@ function About() {
           About Our Company
         </h4>
 
-        <h1 className="font-serif text-2xl leading-snug text-gray-900 sm:text-3xl md:text-4xl lg:text-5xl">
-          <span className={`${greatVibes.className} mr-1 text-5xl leading-none text-[#712B13] sm:text-6xl md:text-7xl`}>
+        <h1 className="font-serif text-xl leading-snug text-gray-900 sm:text-2xl md:text-4xl lg:text-4xl">
+          <span className={`${greatVibes.className} mr-1 text-4xl leading-none text-[#712B13] sm:text-5xl md:text-6xl`}>
             E
           </span>
           levate Your Journey with Bin Yameen Travel
@@ -31,13 +31,9 @@ function About() {
         {/* Text */}
         <div className="max-w-xl">
           <p className="mb-7 font-sans text-sm leading-7 text-gray-700 sm:text-base md:mb-8 md:text-lg">
-            At Bin Yameen Travel, we serve pilgrims and travelers with one
-            goal — a hassle-free journey, every time. We curate deeply
-            personalized, high-end itineraries built entirely around your
-            lifestyle, pace, and requirements, backed by round-the-clock,
-            white-glove concierge care from start to finish. Every detail is
-            handled with absolute precision, so you can experience the
-            journey, not the hassle.
+           At Bin Yameen Travel, we believe every journey should be more than a destination. From the spiritual serenity of Makkah and Madinah to the breathtaking landscapes of Northern Pakistan, we create thoughtfully planned journeys designed around comfort, care, and unforgettable moments.
+
+With personalized travel arrangements and dedicated support throughout your journey, we take care of the details so you can focus on what truly matters — experiencing the places, people, and moments along the way.
           </p>
 
           <button className="rounded-md bg-[#800E13] px-6 py-3 font-serif text-sm text-white transition hover:bg-[#650b0f] sm:px-7 sm:py-3.5">
@@ -46,7 +42,7 @@ function About() {
         </div>
 
         {/* Video */}
-        <div className="w-full overflow-hidden rounded-xl shadow-sm aspect-video">
+        <div className="w-full overflow-hidden rounded-xl shadow-sm aspect-video -mt-7">
           <video src="/video.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" />
         </div>
 

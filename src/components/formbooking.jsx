@@ -235,9 +235,9 @@ export default function BookingWidget() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto -mt-16 relative z-30 px-4">
+    <div className="w-full max-w-6xl mx-auto -mt-16 relative z-30 px-4">
       {/* ---------- TAB ROW ---------- */}
-      <div className="flex bg-gray-50 rounded-t-xl overflow-hidden shadow-lg">
+      <div className="flex bg-gray-50  mt-4 rounded-t-xl overflow-hidden shadow-lg">
         {TABS.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
@@ -249,7 +249,7 @@ export default function BookingWidget() {
               className={`flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-medium transition-colors
                 ${
                   isActive
-                    ? "bg-[#335C67] text-white"       // active tab: dark teal, matches the button color
+                    ? "bg-[#6C757D] text-white"       // active tab: dark teal, matches the button color
                     : "bg-gray-50 text-gray-500 hover:bg-gray-100"
                 }`}
             >
@@ -261,7 +261,7 @@ export default function BookingWidget() {
       </div>
 
       {/* ---------- CARD BODY ---------- */}
-      <div className="bg-white rounded-b-xl shadow-lg px-6 py-6">
+      <div className="bg-white rounded-b-xl  shadow-lg px-6 py-6">
         {/* --- trip-specific fields: wraps responsively, count varies per tab --- */}
         <div className="flex flex-col md:flex-row md:flex-wrap gap-3 mb-5">
           {renderTripFields()}
@@ -322,7 +322,7 @@ export default function BookingWidget() {
 
           <button
             onClick={handleSubmit}
-            className="flex items-center justify-center gap-2 bg-[#335C67] hover:bg-[#2a4a53] text-white font-medium text-sm px-8 py-3 rounded-full transition-colors w-full md:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#800E13] hover:bg-[#2a4a53] text-white font-medium text-sm px-8 py-3 rounded-full transition-colors w-full md:w-auto"
           >
             <Send className="w-4 h-4" />
             Send Enquiry
