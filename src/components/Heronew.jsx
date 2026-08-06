@@ -16,7 +16,7 @@ function Heronew() {
 
         {/* Background Video */}
         <div className="absolute inset-0 h-full w-full">
-          <video autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover">
+      <video autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover">
             <source src="/video.mp4" type="video/mp4" />
           </video>
 

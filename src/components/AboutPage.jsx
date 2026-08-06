@@ -120,7 +120,7 @@ function AboutUsGrid() {
               item.tall ? "lg:row-span-2" : ""
             }`}
           >
-            <img
+            <Image
               src={item.image}
               alt={item.name}
               className="h-60 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-60 lg:h-72"
