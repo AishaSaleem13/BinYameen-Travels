@@ -43,7 +43,7 @@ With personalized travel arrangements and dedicated support throughout your jour
 
         {/* Video */}
         <div className="w-full overflow-hidden rounded-xl shadow-sm aspect-video -mt-7">
-          <video src="/video.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" />
+          <video src="/video3.mp4" autoPlay muted loop playsInline className="h-full w-full object-cover" />
         </div>
 
       </div>
