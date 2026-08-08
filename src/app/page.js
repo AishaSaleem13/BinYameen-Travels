@@ -2,6 +2,7 @@
 // import Navbar from "@/components/Navbar";
 
 import Heronew from "@/components/Heronew";
+import UmrahIntroSection from "@/components/Umrah";
 import About from "@/components/about";
 import BookingWidget from "@/components/formbooking"
 
@@ -15,7 +16,7 @@ export default function Home() {
        <Heronew/>
   <BookingWidget/>
   <About/>
-  
+  <UmrahIntroSection/>
   
      </div>
 {/* <HeroSlider/> */}

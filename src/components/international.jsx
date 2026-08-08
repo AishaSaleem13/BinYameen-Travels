@@ -2,11 +2,12 @@
 
 import React from "react";
 import { Menu, MapPin, ArrowLeft, ArrowUpRight, HeartHandshake, Trophy, Leaf } from "lucide-react";
+import Navbarnew from "./navbarnew";
 
 export default function AboutUsPage() {
   return (
     <div className="w-full bg-white">
-      <Navbar />
+      <Navbarnew  variant="light"/>
       <Hero />
       <StatsBento />
       <AboutUsGrid />
@@ -127,43 +128,13 @@ function StatCard({ icon: Icon, value, label, tone, ring, className = "" }) {
   );
 }
 
-function Navbar() {
-  const links = ["Home", "Umrah Packages", "International Tours", "About Us", "Contact Us"];
-  return (
-    <nav className="flex items-center justify-between border-b border-slate-100 px-4 py-4 sm:px-8">
-      <div className="flex items-center gap-2 text-xl font-bold text-slate-900 cursor-pointer">
-        BinYameen Travels
-      </div>
 
-      <div className="hidden items-center gap-8 text-sm font-medium text-slate-500 lg:flex">
-        {links.map((l) => (
-          <a
-            key={l}
-            href="#"
-            className={
-              l === "International Tours"
-                ? "border-b-2 border-[#800E13] pb-1 text-slate-900"
-                : "hover:text-slate-900"
-            }
-          >
-            {l}
-          </a>
-        ))}
-      </div>
-
-      <button className="hidden rounded-full bg-[#800E13] px-5 py-2 text-sm font-semibold text-white hover:bg-[#63080e] lg:block">
-        Custom Tour
-      </button>
-      <Menu className="text-slate-700 lg:hidden" />
-    </nav>
-  );
-}
 
 function Hero() {
   return (
-    <div className="relative mx-4 mt-4 overflow-hidden rounded-2xl sm:mx-8">
+    <div className="relative mx-4 mt-26 overflow-hidden rounded-2xl sm:mx-8">
       <video
-        src="/video3.mp4"
+        src="/video 2.mp4"
         autoPlay
         muted
         loop

@@ -11,7 +11,7 @@ function Heronew() {
 
         {/* Navbar */}
         <div className="absolute left-0 top-0 z-50 w-full">
-          <Navbarnew />
+         <Navbarnew variant="dark" />
         </div>
 
         {/* Background Video */}

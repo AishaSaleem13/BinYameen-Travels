@@ -16,9 +16,9 @@ function About() {
           <div className="w-full">
             <div className="overflow-hidden rounded-xl">
               <img
-                src="/imagetravel.jpg"
+                src="/img.jpg"
                 alt="Travel destination"
-                className="h-[360px] w-full object-cover sm:h-[420px] md:h-[450px]"
+                className="h-[360px] w-full object-cover sm:h-[420px] md:h-[350px]"
               />
             </div>
           </div>
