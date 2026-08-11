@@ -1,10 +1,10 @@
-import InternationalPage from '@/components/international'
+import CraftedEscapesHero from '@/components/Aboutpage'
 import React from 'react'
 
 function page() {
   return (
     <div>
-      <InternationalPage/>
+      <CraftedEscapesHero/>
     </div>
   )
 }

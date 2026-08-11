@@ -61,7 +61,7 @@ function Navbarnew({ variant = "dark" }) {
           </li>
 
           <li>
-            <Link href="/about" className={hoverColor}>
+            <Link href="/aboutpage" className={hoverColor}>
               About us
             </Link>
           </li>
@@ -73,7 +73,7 @@ function Navbarnew({ variant = "dark" }) {
           </li>
 
           <li>
-            <Link href="/international" className={hoverColor}>
+            <Link href="/internationalpage" className={hoverColor}>
               International Tours
             </Link>
           </li>
@@ -85,7 +85,7 @@ function Navbarnew({ variant = "dark" }) {
           </li>
 
           <li>
-            <Link href="/contact" className={hoverColor}>
+            <Link href="/Contact" className={hoverColor}>
               Contact
             </Link>
           </li>
@@ -149,7 +149,7 @@ function Navbarnew({ variant = "dark" }) {
             </li>
 
             <li>
-              <Link href="/about">About us</Link>
+              <Link href="/aboutpage">About us</Link>
             </li>
 
             <li>
@@ -157,7 +157,8 @@ function Navbarnew({ variant = "dark" }) {
             </li>
 
             <li>
-              <Link href="/international">International Tours</Link>
+              <Link href="/internatioanlpage
+              ">International Tours</Link>
             </li>
 
             <li>
@@ -165,7 +166,7 @@ function Navbarnew({ variant = "dark" }) {
             </li>
 
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link href="/Contact">Contact</Link>
             </li>
 
             <div className="divider my-1" />
