@@ -249,7 +249,7 @@ export default function BookingWidget() {
               className={`flex-1 flex items-center justify-center gap-2 px-4 py-4 text-sm font-medium transition-colors
                 ${
                   isActive
-                    ? "bg-[#6C757D] text-white"       // active tab: dark teal, matches the button color
+                    ? "bg-[#800E13] text-white"       // active tab: dark teal, matches the button color
                     : "bg-gray-50 text-gray-500 hover:bg-gray-100"
                 }`}
             >

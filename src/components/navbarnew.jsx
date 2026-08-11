@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect } from "react";
@@ -5,6 +6,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  FaFacebookF,
+  FaInstagram,
+
+} from "react-icons/fa";
 
 function Navbarnew({ variant = "dark" }) {
   useEffect(() => {
@@ -18,7 +24,10 @@ function Navbarnew({ variant = "dark" }) {
 
   const isDark = variant === "dark";
 
-  const textColor = isDark ? "text-white" : "text-[#241C17]";
+  const textColor = isDark
+    ? "text-white"
+    : "text-[#241C17]";
+
   const hoverColor = isDark
     ? "hover:bg-white/10"
     : "hover:bg-[#800E13]/10";
@@ -26,7 +35,9 @@ function Navbarnew({ variant = "dark" }) {
   return (
     <div
       className={`navbar absolute left-0 right-0 top-0 z-50 px-6 py-4 lg:px-12 ${
-        isDark ? "bg-transparent" : "bg-white shadow-sm"
+        isDark
+          ? "bg-transparent"
+          : "bg-white shadow-sm"
       }`}
     >
       {/* ================= LOGO ================= */}
@@ -53,7 +64,9 @@ function Navbarnew({ variant = "dark" }) {
       {/* ================= DESKTOP NAVIGATION ================= */}
 
       <div className="navbar-center hidden lg:flex">
-        <ul className={`menu menu-horizontal gap-2 px-1 ${textColor}`}>
+        <ul
+          className={`menu menu-horizontal gap-2 px-1 ${textColor}`}
+        >
           <li>
             <Link href="/" className={hoverColor}>
               Home
@@ -67,19 +80,28 @@ function Navbarnew({ variant = "dark" }) {
           </li>
 
           <li>
-            <Link href="/umrahpackages" className={hoverColor}>
+            <Link
+              href="/umrahpackages"
+              className={hoverColor}
+            >
               Umrah Packages
             </Link>
           </li>
 
           <li>
-            <Link href="/internationalpage" className={hoverColor}>
+            <Link
+              href="/internationalpage"
+              className={hoverColor}
+            >
               International Tours
             </Link>
           </li>
 
           <li>
-            <Link href="/tours/northern" className={hoverColor}>
+            <Link
+              href="/Northtour"
+              className={hoverColor}
+            >
               Northern Tours
             </Link>
           </li>
@@ -95,26 +117,55 @@ function Navbarnew({ variant = "dark" }) {
       {/* ================= RIGHT SIDE ================= */}
 
       <div className="navbar-end">
-        {/* Desktop */}
+        {/* Desktop Social Icons */}
 
-        <div className={`hidden items-center gap-3 lg:flex ${textColor}`}>
-          <Link href="/login" className="btn btn-ghost btn-sm normal-case">
-            Log in
-          </Link>
-
-          <Link
-            href="/signup"
-            className={`btn btn-outline btn-sm normal-case ${
+        <div
+          className={`hidden items-center gap-2 lg:flex ${textColor}`}
+        >
+          <a
+            href="https://www.instagram.com/binyameentravels/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
               isDark
-                ? "border-white text-white hover:bg-white hover:text-black"
-                : "border-[#800E13] text-[#800E13] hover:bg-[#800E13] hover:text-white"
+                ? "hover:bg-white/10"
+                : "hover:bg-[#800E13]/10"
             }`}
           >
-            Sign up
-          </Link>
+            <FaInstagram className="h-4 w-4" />
+          </a>
+
+          <a
+            href="https://www.facebook.com/share/199i7B1Tyy/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+              isDark
+                ? "hover:bg-white/10"
+                : "hover:bg-[#800E13]/10"
+            }`}
+          >
+            <FaFacebookF className="h-4 w-4" />
+          </a>
+
+          {/* <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+              isDark
+                ? "hover:bg-white/10"
+                : "hover:bg-[#800E13]/10"
+            }`}
+          >
+            <FaWhatsapp className="h-4 w-4" />
+          </a> */}
         </div>
 
-        {/* Mobile */}
+        {/* Mobile Menu */}
 
         <div className="dropdown dropdown-end lg:hidden">
           <div
@@ -142,42 +193,75 @@ function Navbarnew({ variant = "dark" }) {
 
           <ul
             tabIndex={-1}
-            className="menu menu-sm dropdown-content z-50 mt-3 w-60 rounded-box bg-white p-3 text-black shadow-lg"
+            className="menu menu-sm dropdown-content z-50 mt-3 w-64 rounded-box bg-white p-3 text-black shadow-xl"
           >
             <li>
               <Link href="/">Home</Link>
             </li>
 
             <li>
-              <Link href="/aboutpage">About us</Link>
+              <Link href="/aboutpage">
+                About us
+              </Link>
             </li>
 
             <li>
-              <Link href="/umrahpackages">Umrah Packages</Link>
+              <Link href="/umrahpackages">
+                Umrah Packages
+              </Link>
             </li>
 
             <li>
-              <Link href="/internatioanlpage
-              ">International Tours</Link>
+              <Link href="/internationalpage">
+                International Tours
+              </Link>
             </li>
 
             <li>
-              <Link href="/tours/northern">Northern Tours</Link>
+              <Link href="/Northtour">
+                Northern Tours
+              </Link>
             </li>
 
             <li>
-              <Link href="/Contact">Contact</Link>
+              <Link href="/Contact">
+                Contact
+              </Link>
             </li>
 
-            <div className="divider my-1" />
+            {/* Social Icons */}
 
-            <li>
-              <Link href="/login">Log in</Link>
-            </li>
+            <div className="mt-3 flex items-center justify-center gap-3 border-t border-gray-100 pt-4">
+            <a
+  href="https://www.instagram.com/binyameentravels?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Instagram"
+  className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-[#800E13] hover:text-white"
+>
+  <FaInstagram />
+</a>
 
-            <li>
-              <Link href="/signup">Sign up</Link>
-            </li>
+              <a
+                href="https://www.facebook.com/share/199i7B1Tyy/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-[#800E13] hover:text-white"
+              >
+                <FaFacebookF />
+              </a>
+
+              {/* <a
+                href="https:"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-[#800E13] hover:text-white"
+              >
+                <FaWhatsapp />
+              </a> */}
+            </div>
           </ul>
         </div>
       </div>
@@ -186,3 +270,4 @@ function Navbarnew({ variant = "dark" }) {
 }
 
 export default Navbarnew;
+

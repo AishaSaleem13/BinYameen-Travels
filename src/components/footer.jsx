@@ -10,23 +10,23 @@ import Link from "next/link";
 // } from "lucide-react";
 
 const services = [
-  { name: "Umrah", href: "/umrah" },
-  { name: "International Tours", href: "/international" },
-  { name: "Northern Tours", href: "/northern" },
+  { name: "Umrah", href: "/umrahpackages" },
+  { name: "International Tours", href: "/internationalpage" },
+  { name: "Northern Tours", href: "/Northtour" },
   { name: "Flight Booking", href: "/booking" },
   { name: "Hotel Booking", href: "/booking" },
 ];
 
 const support = [
-  { name: "Contact Us", href: "/contact" },
-  { name: "FAQs", href: "/#faq" },
+  { name: "Contact Us", href: "/Contact" },
+  { name: "FAQs", href: "/faq" },
   { name: "Booking Guide", href: "/booking" },
 ];
 
 const company = [
-  { name: "About Bin Yameen", href: "/about" },
-  { name: "Our Journeys", href: "/#packages" },
-  { name: "Why Choose Us", href: "/#why-us" },
+  { name: "About Bin Yameen", href: "/aboutpage" },
+  { name: "Our Journeys", href: "/aboutpage" },
+  { name: "Why Choose Us", href: "/aboutpage" },
 ];
 
 

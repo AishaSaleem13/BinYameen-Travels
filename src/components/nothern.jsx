@@ -1,16 +1,15 @@
 import React from 'react'
 import Navbarnew from './navbarnew'
-import ContactUs from './Contact'
 import Footer from './footer'
-export default function Contactpage() {
+import PopularDestinations from './north1'
+import HappyTravelers from './happttraveler'
+function Nothern() {
   return (
-<>
-
-
+   <>
 <Navbarnew/>
       {/* ---------- HERO ---------- */}
       <section className="relative">
-        <div className="relative h-full lg:h-[420px] w-full overflow-hidden md:h-[460px]">
+        <div className="relative  h-full lg:h-[420px] w-full overflow-hidden md:h-[460px]">
           <img
             src="/img.jpg"
             alt="Aerial view of turquoise ocean and beach"
@@ -55,11 +54,14 @@ export default function Contactpage() {
             </button>
           </div>
         </div>
-        <ContactUs/>
-        <Footer/>
+        
+        
       </section>
-</>
+      <PopularDestinations/>
+      <HappyTravelers/>
+      <Footer/>
+   </>
   )
 }
 
-
+export default Nothern
