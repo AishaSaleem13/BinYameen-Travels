@@ -238,7 +238,7 @@ const countries = [
     name: "Turkey",
     image: "/tURKIE.jpg",
     places: [
-      { id: "turkey-hagia-sophia", name: "Hagia Sophia, Istanbul", image: "/turkey-hagia-sophia.jpg", blurb: "Byzantine-Ottoman landmark on the Bosphorus." },
+      { id: "turkey-hagia-sophia", name: "Hagia Sophia, Istanbul", image: "/Cappadocia.jpg", blurb: "Byzantine-Ottoman landmark on the Bosphorus." },
       { id: "turkey-cappadocia", name: "Cappadocia", image: "/turkey-cappadocia.jpg", blurb: "Sunrise hot-air balloons over fairy chimneys." },
       { id: "turkey-pamukkale", name: "Pamukkale", image: "/turkey-pamukkale.jpg", blurb: "Terraced white travertine mineral pools." },
     ],
