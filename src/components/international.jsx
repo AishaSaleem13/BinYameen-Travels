@@ -3,6 +3,10 @@
 import React from "react";
 import { Menu, MapPin, ArrowLeft, ArrowUpRight, HeartHandshake, Trophy, Leaf } from "lucide-react";
 import Navbarnew from "./navbarnew";
+import ContactUs from "./Contact";
+import Footer from "./footer";
+import HappyTravelers from "./happttraveler";
+import Link from "next/link";
 
 export default function InternationalPage() {
   return (
@@ -169,9 +173,9 @@ const countries = [
     name: "Dubai",
     image: "/dubai.jpg",
     places: [
-      { id: "dubai-burj-khalifa", name: "Burj Al Arab", image: "/dubaie.jpg", blurb: "The world's tallest tower, with an observation deck above the clouds." },
-      { id: "dubai-palm-jumeirah", name: "Palm Jumeirah", image: "/dubai-palm-jumeirah.jpg", blurb: "Man-made island lined with resorts and private beaches." },
-      { id: "dubai-desert-safari", name: "Desert Safari", image: "/dubai-desert-safari.jpg", blurb: "Dune bashing, camel rides, and a Bedouin-style dinner under the stars." },
+      { id: "dubai-burj-khalifa", name: "Burj Al Arab", image: "/dubaie.jpg", blurb: "" },
+      { id: "dubai-palm-jumeirah", name: "Palm Jumeirah", image: "/palmju.jpg", blurb: "Man-made island lined with resorts and private beaches." },
+      { id: "dubai-desert-safari", name: "Desert Safari", image: "/safari.jpg", blurb: "Dune bashing, camel rides, and a Bedouin-style dinner under the stars." },
     ],
   },
   {
@@ -179,9 +183,9 @@ const countries = [
     name: "Bali",
     image: "/bali.jpg",
     places: [
-      { id: "bali-ubud", name: "Ubud Rice Terraces", image: "/bali-ubud.jpg", blurb: "Emerald terraced paddies and jungle art villages." },
-      { id: "bali-uluwatu", name: "Uluwatu Temple", image: "/bali-uluwatu.jpg", blurb: "Clifftop temple with sweeping Indian Ocean sunsets." },
-      { id: "bali-seminyak", name: "Seminyak Beach", image: "/bali-seminyak.jpg", blurb: "Laid-back beach clubs and boutique shopping." },
+      { id: "bali-ubud", name: "Ubud Rice Terraces", image: "/Terrace.jpg", blurb: "Emerald terraced paddies and jungle art villages." },
+      { id: "bali-uluwatu", name: "Uluwatu Temple", image: "/Temple.jpeg", blurb: "Clifftop temple with sweeping Indian Ocean sunsets." },
+      { id: "bali-seminyak", name: "Seminyak Beach", image: "/Beach.jpeg", blurb: "Laid-back beach clubs and boutique shopping." },
     ],
   },
   {
@@ -189,9 +193,9 @@ const countries = [
     name: "Malaysia",
     image: "/malysia.jpg",
     places: [
-      { id: "malaysia-petronas", name: "Petronas Towers", image: "/malaysia-petronas.jpg", blurb: "Iconic twin towers in the heart of Kuala Lumpur." },
-      { id: "malaysia-langkawi", name: "Langkawi Islands", image: "/malaysia-langkawi.jpg", blurb: "Cable car views and duty-free island escapes." },
-      { id: "malaysia-batu-caves", name: "Batu Caves", image: "/malaysia-batu-caves.jpg", blurb: "Limestone caves with a towering golden statue." },
+      { id: "malaysia-petronas", name: "Petronas Towers", image: "/pe.jpeg", blurb: "Iconic twin towers in the heart of Kuala Lumpur." },
+      { id: "malaysia-langkawi", name: "Langkawi Islands", image: "/island.jpeg", blurb: "Cable car views and duty-free island escapes." },
+      { id: "malaysia-batu-caves", name: "Batu Caves", image: "/batu.jpeg", blurb: "Limestone caves with a towering golden statue." },
     ],
   },
   {
@@ -199,9 +203,9 @@ const countries = [
     name: "Singapore",
     image: "/singapore2.jpg",
     places: [
-      { id: "singapore-marina-bay", name: "Marina Bay Sands", image: "/singapore-marina-bay.jpg", blurb: "Rooftop infinity pool overlooking the skyline." },
-      { id: "singapore-gardens", name: "Gardens by the Bay", image: "/singapore-gardens.jpg", blurb: "Futuristic Supertrees and a glass-domed rainforest." },
-      { id: "singapore-sentosa", name: "Sentosa Island", image: "/singapore-sentosa.jpg", blurb: "Theme parks, beaches, and Universal Studios." },
+      { id: "singapore-marina-bay", name: "Marina Bay Sands", image: "/marine.jpeg", blurb: "Rooftop infinity pool overlooking the skyline." },
+      { id: "singapore-gardens", name: "Gardens by the Bay", image: "/Gardens.jpeg", blurb: "Futuristic Supertrees and a glass-domed rainforest." },
+      { id: "singapore-sentosa", name: "Sentosa Island", image: "/Sentosa.jpeg", blurb: "Theme parks, beaches, and Universal Studios." },
     ],
   },
   {
@@ -209,9 +213,9 @@ const countries = [
     name: "Baku",
     image: "/baku.jpg",
     places: [
-      { id: "baku-old-city", name: "Old City (Icherisheher)", image: "/baku-old-city.jpg", blurb: "UNESCO-listed walled city with the Maiden Tower." },
-      { id: "baku-flame-towers", name: "Flame Towers", image: "/baku-flame-towers.jpg", blurb: "Glass towers that light up the night skyline." },
-      { id: "baku-boulevard", name: "Baku Boulevard", image: "/baku-boulevard.jpg", blurb: "Seafront promenade along the Caspian." },
+      { id: "baku-old-city", name: "Old City (Icherisheher)", image: "/old.jpeg", blurb: "UNESCO-listed walled city with the Maiden Tower." },
+      { id: "baku-flame-towers", name: "Flame Towers", image: "/flame.jpeg", blurb: "Glass towers that light up the night skyline." },
+      { id: "baku-boulevard", name: "Baku Boulevard", image: "/boulerve.jpeg", blurb: "Seafront promenade along the Caspian." },
     ],
   },
   {
@@ -219,8 +223,8 @@ const countries = [
     name: "Jeddah",
     image: "/jaddah.jpg",
     places: [
-      { id: "jeddah-corniche", name: "Jeddah Corniche", image: "/jeddah-corniche.jpg", blurb: "Waterfront walk with the iconic King Fahd Fountain." },
-      { id: "jeddah-albalad", name: "Al-Balad Old Town", image: "/jeddah-albalad.jpg", blurb: "Historic coral-stone houses and souks." },
+      { id: "jeddah-corniche", name: "Jeddah Corniche", image: "/corniche.jpg", blurb: "Waterfront walk with the iconic King Fahd Fountain." },
+      { id: "jeddah-albalad", name: "Al-Balad Old Town", image: "/balad.jpeg", blurb: "Historic coral-stone houses and souks." },
     ],
   },
   {
@@ -228,9 +232,9 @@ const countries = [
     name: "Thailand",
     image: "/bangkok2 (1).jpg",
     places: [
-      { id: "thailand-grand-palace", name: "Grand Palace, Bangkok", image: "/thailand-grand-palace.jpg", blurb: "Ornate former royal residence and Wat Phra Kaew." },
-      { id: "thailand-phuket", name: "Phuket Beaches", image: "/thailand-phuket.jpg", blurb: "Island hopping and turquoise bays." },
-      { id: "thailand-chiang-mai", name: "Chiang Mai Temples", image: "/thailand-chiang-mai.jpg", blurb: "Mountain-town temples and night markets." },
+      { id: "thailand-grand-palace", name: "Grand Palace, Bangkok", image: "/grand.jpeg", blurb: "Ornate former royal residence and Wat Phra Kaew." },
+      { id: "thailand-phuket", name: "Phuket Beaches", image: "/beach.jpg", blurb: "Island hopping and turquoise bays." },
+      { id: "thailand-chiang-mai", name: "Chiang Mai Temples", image: "/temple2.jpeg", blurb: "Mountain-town temples and night markets." },
     ],
   },
   {
@@ -238,9 +242,9 @@ const countries = [
     name: "Turkey",
     image: "/tURKIE.jpg",
     places: [
-      { id: "turkey-hagia-sophia", name: "Hagia Sophia, Istanbul", image: "/Cappadocia.jpg", blurb: "Byzantine-Ottoman landmark on the Bosphorus." },
-      { id: "turkey-cappadocia", name: "Cappadocia", image: "/turkey-cappadocia.jpg", blurb: "Sunrise hot-air balloons over fairy chimneys." },
-      { id: "turkey-pamukkale", name: "Pamukkale", image: "/turkey-pamukkale.jpg", blurb: "Terraced white travertine mineral pools." },
+      { id: "turkey-hagia-sophia", name: "Hagia Sophia, Istanbul", image: "/HagiaSophia.jpg", blurb: "Byzantine-Ottoman landmark on the Bosphorus." },
+      { id: "turkey-cappadocia", name: "Cappadocia", image: "/cappadocia.jpeg", blurb: "Sunrise hot-air balloons over fairy chimneys." },
+      { id: "turkey-pamukkale", name: "Pamukkale", image: "/pamukkale.jpg", blurb: "Terraced white travertine mineral pools." },
     ],
   },
   {
@@ -248,9 +252,9 @@ const countries = [
     name: "Japan",
     image: "/japan.jpg",
     places: [
-      { id: "japan-fuji", name: "Mount Fuji", image: "/japan-fuji.jpg", blurb: "Japan's iconic peak, best seen from Lake Kawaguchi." },
-      { id: "japan-kyoto", name: "Kyoto Temples", image: "/japan-kyoto.jpg", blurb: "Fushimi Inari's torii gates and old geisha streets." },
-      { id: "japan-tokyo", name: "Tokyo", image: "/japan-tokyo.jpg", blurb: "Neon crossings, Shibuya, and Asakusa's ancient temple." },
+      { id: "japan-fuji", name: "Mount Fuji", image: "/MountFuji.jpeg", blurb: "Japan's iconic peak, best seen from Lake Kawaguchi." },
+      { id: "japan-kyoto", name: "Kyoto Temples", image: "/Kyototemple.jpeg", blurb: "Fushimi Inari's torii gates and old geisha streets." },
+      { id: "japan-tokyo", name: "Tokyo", image: "/Tokyo.jpeg", blurb: "Neon crossings, Shibuya, and Asakusa's ancient temple." },
     ],
   },
 ];
@@ -272,6 +276,7 @@ function AboutUsGrid() {
   
 
   return (
+    <>
     <section className="px-5 py-12 sm:px-8 md:px-12">
       {/* Heading */}
       <div className="mb-10 lg:mb-14">
@@ -371,12 +376,14 @@ function AboutUsGrid() {
                 </h3>
               </div>
 
-              <button
+             <Link
+              href={`/BookingForm?PackageId=${encodeURIComponent(selectedCountry.id)}&PackageName=${encodeURIComponent(selectedCountry.name)}&PackageImage=${encodeURIComponent(selectedCountry.image)}`}
                 className="flex items-center justify-center gap-2 rounded-full bg-[#800E13] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#63080e]"
               >
                 Explore {selectedCountry.name}
                 <ArrowUpRight size={16} />
-              </button>
+              
+             </Link>
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -414,5 +421,10 @@ function AboutUsGrid() {
         )}
       </div>
     </section>
+    <HappyTravelers/>
+    <ContactUs/>
+    <Footer/>
+
+    </>
   );
 }

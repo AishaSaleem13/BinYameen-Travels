@@ -3,27 +3,27 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Travivu made our honeymoon absolutely perfect! Everything was well-planned and the support team was amazing.",
-    name: "Sophia Williams",
-    location: "New York, USA",
+      "BinYameen made our trip absolutely perfect! Everything was well-planned and the support team was amazing.",
+    name: "Sana javed",
+    location: "Karachi,Pakistan",
     rating: 5.0,
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+
   },
   {
     quote:
-      "The guide was super knowledgeable and the itinerary was just perfect. Can't wait to book my next trip with Travivu!",
-    name: "James Anderson",
-    location: "London, UK",
+      "The guide was super knowledgeable and the itinerary was just perfect. Can't wait to book my next trip with BinYameen!",
+    name: "Muneeb akhtar",
+    location: "Karachi,Pakistan",
     rating: 5.0,
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    
   },
   {
     quote:
       "From booking to the last day of our trip, everything was seamless. Highly recommended!",
-    name: "Priya Sharma",
-    location: "Bangalore, India",
+    name: "Balaj Sikandar",
+    location: "Lahore,Pakistan",
     rating: 5.0,
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+
   },
 ];
 
@@ -52,11 +52,7 @@ export default function HappyTravelers() {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    className="h-10 w-10 rounded-full object-cover"
-                  />
+                  
                   <div>
                     <p className="text-sm font-semibold text-slate-900">
                       {t.name}

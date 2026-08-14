@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const umrahPackages = [
@@ -367,7 +368,10 @@ export default function UmrahPackages() {
   <div className="grid grid-cols-2 gap-3">
 
     {/* View Package Details */}
-    <button
+  
+<Link
+   href={`/BookingForm?PackageId=${encodeURIComponent(pkg.id)}&PackageName=${encodeURIComponent(pkg.name)}&PackageImage=${encodeURIComponent(pkg.image)}`}
+  //  href={`BookingForm?PackageId=${pkg.id}`}
       type="button"
       className={`
         group/details
@@ -410,9 +414,11 @@ export default function UmrahPackages() {
       <span className="ml-2 text-base transition-transform duration-300 group-hover/details:translate-x-1">
         →
       </span>
-    </button>
+    
+  </Link>
 
     {/* Customize Package */}
+   <Link  href="/Customize?type=Umrah">
     <button
       type="button"
       onClick={() => openCustomize(pkg)}
@@ -458,6 +464,7 @@ export default function UmrahPackages() {
         →
       </span>
     </button>
+   </Link>
 
   </div>
 </div>

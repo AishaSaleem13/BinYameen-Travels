@@ -3,6 +3,7 @@ import Navbarnew from './navbarnew'
 import Footer from './footer'
 import PopularDestinations from './north1'
 import HappyTravelers from './happttraveler'
+import ContactUs from './Contact'
 function Nothern() {
   return (
    <>
@@ -46,7 +47,7 @@ function Nothern() {
               Ready to Go?
             </h3>
             <p className="mb-5 text-sm leading-relaxed text-slate-300">
-              Our Crafted Escapes advisors are ready to plan the perfect
+              Our BinYameen advisors are ready to plan the perfect
               trip for you and/or your family.
             </p>
             <button className="rounded-md border border-white/70 px-5 py-2 text-sm font-medium text-white hover:bg-white/10">
@@ -59,6 +60,7 @@ function Nothern() {
       </section>
       <PopularDestinations/>
       <HappyTravelers/>
+      <ContactUs/>
       <Footer/>
    </>
   )

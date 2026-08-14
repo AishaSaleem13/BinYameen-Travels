@@ -3,6 +3,7 @@
 import React from "react";
 import Navbarnew from "./navbarnew";
 import TextType from "./TextType";
+import Link from "next/link";
 
 function Heronew() {
   return (
@@ -55,14 +56,17 @@ function Heronew() {
 
           {/* Buttons */}
           <div className="flex w-full max-w-sm flex-col gap-3 sm:w-auto sm:max-w-none sm:flex-row sm:gap-4">
+<Link href="/BookingForm">
 
             <button className="w-full rounded-md bg-[#800E13] px-6 py-3 font-serif text-sm text-white transition-colors hover:bg-[#650b0f] sm:w-auto sm:px-7 sm:text-base">
               Book your Umrah
             </button>
+</Link>
 
-            <button className="w-full rounded-md border border-white/50 px-6 py-3 font-serif text-sm text-white transition-colors hover:border-white hover:bg-white/10 sm:w-auto sm:px-7">
+           <Link href="/Northtour"
+             className="w-full rounded-md border border-white/50 px-6 py-3 font-serif text-sm text-white transition-colors hover:border-white hover:bg-white/10 sm:w-auto sm:px-7">
               Explore northern tours
-            </button>
+           </Link>
 
           </div>
         </div>
