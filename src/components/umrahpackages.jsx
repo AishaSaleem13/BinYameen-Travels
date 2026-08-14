@@ -370,8 +370,9 @@ export default function UmrahPackages() {
     {/* View Package Details */}
   
 <Link
-   href={`/BookingForm?PackageId=${encodeURIComponent(pkg.id)}&PackageName=${encodeURIComponent(pkg.name)}&PackageImage=${encodeURIComponent(pkg.image)}`}
-  //  href={`BookingForm?PackageId=${pkg.id}`}
+  prefetch={false}
+  href={`/BookingForm?PackageId=${encodeURIComponent(pkg.id)}&PackageName=${encodeURIComponent(pkg.name)}&PackageImage=${encodeURIComponent(pkg.image)}`}
+
       type="button"
       className={`
         group/details
@@ -418,7 +419,9 @@ export default function UmrahPackages() {
   </Link>
 
     {/* Customize Package */}
-   <Link  href="/Customize?TripType=Umrah">
+   <Link 
+   prefetch={false}
+    href="/Customize?TripType=Umrah">
     <button
       type="button"
      

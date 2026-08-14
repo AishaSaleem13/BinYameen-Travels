@@ -49,6 +49,7 @@ export default function PopularDestinations() {
 
           {/* Customize */}
           <Link
+            prefetch={false}
             href="/Customize?TripType=Northern"
             className="
               shrink-0
@@ -145,6 +146,7 @@ export default function PopularDestinations() {
 
                 {/* Get Details */}
                 <Link
+                  prefetch={false}
                   href={`/BookingForm?PackageId=${encodeURIComponent(
                     dest.id
                   )}&PackageName=${encodeURIComponent(
