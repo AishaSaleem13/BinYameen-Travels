@@ -85,7 +85,7 @@ export default function ServicesFeatures() {
       </div>
 
       {/* Features */}
-      <div className="bg-indigo-50/60 px-6 py-16 md:px-12 lg:px-20">
+      {/* <div className="bg-indigo-50/60 px-6 py-16 md:px-12 lg:px-20">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -107,7 +107,7 @@ export default function ServicesFeatures() {
             );
           })}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
