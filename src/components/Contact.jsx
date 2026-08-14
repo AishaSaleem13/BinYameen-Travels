@@ -1,43 +1,63 @@
+"use client";
+
 export default function ContactUs() {
   return (
-    <section className="bg-gray-50 py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-14">
-        <div className="grid overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm lg:grid-cols-3">
+    <section className="w-full bg-gray-50 py-10 sm:py-14 md:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-14">
 
-          {/* ================= LEFT — CONTACT INFO ================= */}
-          <div className="p-8 sm:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#800E13]">
+        <div
+          className="
+            grid
+            overflow-hidden
+            rounded-xl
+            border
+            border-gray-100
+            bg-white
+            shadow-sm
+
+            lg:grid-cols-3
+            lg:rounded-2xl
+          "
+        >
+
+          {/* =====================================================
+              LEFT — CONTACT INFO
+          ===================================================== */}
+          <div className="p-6 sm:p-8 md:p-10">
+
+            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#800E13] sm:text-sm">
               Contact Us
             </p>
 
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-gray-900 sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-bold leading-tight text-gray-900 sm:mt-3 sm:text-3xl md:text-4xl">
               Have Questions?
             </h2>
 
-            <p className="mt-3 text-lg font-medium text-gray-700">
+            <p className="mt-2 text-base font-medium leading-snug text-gray-700 sm:mt-3 sm:text-lg">
               Our Travel Experts Are Ready to Help You.
             </p>
 
-            <p className="mt-4 text-sm leading-7 text-gray-500">
+            <p className="mt-3 text-[13px] leading-6 text-gray-500 sm:mt-4 sm:text-sm sm:leading-7">
               Whether you need visa assistance, flight booking support, or
               help planning your next holiday, our friendly team is just a
               message away. We aim to respond within 24 hours.
             </p>
 
-            <div className="mt-7 space-y-6 border-t border-gray-100 pt-7">
+            {/* CONTACT DETAILS */}
+            <div className="mt-6 space-y-5 border-t border-gray-100 pt-6 sm:mt-7 sm:space-y-6 sm:pt-7">
 
-              {/* HEAD OFFICE */}
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13]">
+              {/* ================= HEAD OFFICE ================= */}
+              <div className="flex items-start gap-3 sm:gap-4">
 
-                  {/* Location Icon */}
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13] sm:h-11 sm:w-11">
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.8"
-                    className="h-5 w-5"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -46,33 +66,36 @@ export default function ContactUs() {
                     />
                     <circle cx="12" cy="10" r="2.5" />
                   </svg>
+
                 </span>
 
-                <div>
-                  <p className="font-semibold text-gray-900">
+                <div className="min-w-0">
+
+                  <p className="text-sm font-semibold text-gray-900 sm:text-base">
                     Head Office
                   </p>
 
-                  <p className="mt-1 text-sm leading-6 text-gray-500">
+                  <p className="mt-1 text-[12px] leading-5 text-gray-500 sm:text-sm sm:leading-6">
                     Plot C, 22 Commercial Area, Sector Z DHA Phase 3,
                     Lahore, 56000
                   </p>
+
                 </div>
               </div>
 
 
-              {/* EMAIL */}
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13]">
+              {/* ================= EMAIL ================= */}
+              <div className="flex items-start gap-3 sm:gap-4">
 
-                  {/* Email Icon */}
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13] sm:h-11 sm:w-11">
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.8"
-                    className="h-5 w-5"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                   >
                     <rect
                       x="3"
@@ -88,35 +111,38 @@ export default function ContactUs() {
                       d="m4 7 8 6 8-6"
                     />
                   </svg>
+
                 </span>
 
-                <div>
-                  <p className="font-semibold text-gray-900">
+                <div className="min-w-0">
+
+                  <p className="text-sm font-semibold text-gray-900 sm:text-base">
                     Email Support
                   </p>
 
                   <a
                     href="mailto:binyameen.6363@gmail.com"
-                    className="mt-1 block text-sm text-gray-500 transition-colors hover:text-[#800E13]"
+                    className="mt-1 block break-all text-[12px] text-gray-500 transition-colors hover:text-[#800E13] sm:text-sm"
                   >
                     binyameen.6363@gmail.com
                   </a>
+
                 </div>
               </div>
 
 
-              {/* PHONE */}
-              <div className="flex items-start gap-4">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13]">
+              {/* ================= PHONE ================= */}
+              <div className="flex items-start gap-3 sm:gap-4">
 
-                  {/* Phone Icon */}
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13] sm:h-11 sm:w-11">
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.8"
-                    className="h-5 w-5"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -135,14 +161,17 @@ export default function ContactUs() {
                       A2 2 0 0 1 22 16.92Z"
                     />
                   </svg>
+
                 </span>
 
                 <div>
-                  <p className="font-semibold text-gray-900">
+
+                  <p className="text-sm font-semibold text-gray-900 sm:text-base">
                     Contact Number
                   </p>
 
-                  <div className="mt-1 space-y-1 text-sm text-gray-500">
+                  <div className="mt-1 space-y-1 text-[12px] text-gray-500 sm:text-sm">
+
                     <a
                       href="tel:+923422673475"
                       className="block transition-colors hover:text-[#800E13]"
@@ -163,7 +192,9 @@ export default function ContactUs() {
                     >
                       +92 326 3569976
                     </a>
+
                   </div>
+
                 </div>
               </div>
 
@@ -171,8 +202,11 @@ export default function ContactUs() {
           </div>
 
 
-          {/* ================= MIDDLE — IMAGE ================= */}
-          <div className="relative min-h-[400px] lg:min-h-0">
+          {/* =====================================================
+              MIDDLE — IMAGE
+          ===================================================== */}
+          <div className="relative h-[260px] sm:h-[340px] md:h-[400px] lg:h-auto lg:min-h-0">
+
             <img
               src="/contactimage.jpg"
               alt="Beautiful travel destination"
@@ -180,32 +214,38 @@ export default function ContactUs() {
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
           </div>
 
 
-          {/* ================= RIGHT — FORM ================= */}
-          <div className="bg-gray-50/70 p-8 sm:p-10">
+          {/* =====================================================
+              RIGHT — FORM
+          ===================================================== */}
+          <div className="bg-gray-50/70 p-6 sm:p-8 md:p-10">
 
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[#800E13]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#800E13] sm:text-sm">
               Send us a message
             </p>
 
-            <h2 className="mt-3 text-2xl font-bold leading-snug text-gray-900 sm:text-3xl">
+            <h2 className="mt-2 text-xl font-bold leading-snug text-gray-900 sm:mt-3 sm:text-2xl md:text-3xl">
               How can we help you?
             </h2>
 
-            <p className="mt-3 text-sm leading-6 text-gray-500">
+            <p className="mt-2 text-[12px] leading-5 text-gray-500 sm:mt-3 sm:text-sm sm:leading-6">
               Tell us a little about your travel plans and our team will
               get back to you.
             </p>
 
-            <form className="mt-7 space-y-5">
+
+            {/* ================= FORM ================= */}
+            <form className="mt-5 space-y-4 sm:mt-7 sm:space-y-5">
 
               {/* NAME */}
               <div>
+
                 <label
                   htmlFor="name"
-                  className="block text-sm font-semibold text-gray-900"
+                  className="block text-xs font-semibold text-gray-900 sm:text-sm"
                 >
                   Name
                 </label>
@@ -215,16 +255,39 @@ export default function ContactUs() {
                   name="name"
                   type="text"
                   placeholder="Your name"
-                  className="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10"
+                  className="
+                    mt-1.5
+                    w-full
+                    rounded-lg
+                    border
+                    border-gray-200
+                    bg-white
+                    px-3
+                    py-2.5
+                    text-xs
+                    text-gray-700
+                    outline-none
+                    transition
+                    focus:border-[#800E13]
+                    focus:ring-2
+                    focus:ring-[#800E13]/10
+
+                    sm:mt-2
+                    sm:px-4
+                    sm:py-3
+                    sm:text-sm
+                  "
                 />
+
               </div>
 
 
               {/* EMAIL */}
               <div>
+
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold text-gray-900"
+                  className="block text-xs font-semibold text-gray-900 sm:text-sm"
                 >
                   Email
                 </label>
@@ -234,16 +297,39 @@ export default function ContactUs() {
                   name="email"
                   type="email"
                   placeholder="you@example.com"
-                  className="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10"
+                  className="
+                    mt-1.5
+                    w-full
+                    rounded-lg
+                    border
+                    border-gray-200
+                    bg-white
+                    px-3
+                    py-2.5
+                    text-xs
+                    text-gray-700
+                    outline-none
+                    transition
+                    focus:border-[#800E13]
+                    focus:ring-2
+                    focus:ring-[#800E13]/10
+
+                    sm:mt-2
+                    sm:px-4
+                    sm:py-3
+                    sm:text-sm
+                  "
                 />
+
               </div>
 
 
               {/* PHONE */}
               <div>
+
                 <label
                   htmlFor="contact"
-                  className="block text-sm font-semibold text-gray-900"
+                  className="block text-xs font-semibold text-gray-900 sm:text-sm"
                 >
                   Contact Number
                 </label>
@@ -253,16 +339,39 @@ export default function ContactUs() {
                   name="contact"
                   type="tel"
                   placeholder="+92 XXX XXXXXXX"
-                  className="mt-2 w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10"
+                  className="
+                    mt-1.5
+                    w-full
+                    rounded-lg
+                    border
+                    border-gray-200
+                    bg-white
+                    px-3
+                    py-2.5
+                    text-xs
+                    text-gray-700
+                    outline-none
+                    transition
+                    focus:border-[#800E13]
+                    focus:ring-2
+                    focus:ring-[#800E13]/10
+
+                    sm:mt-2
+                    sm:px-4
+                    sm:py-3
+                    sm:text-sm
+                  "
                 />
+
               </div>
 
 
               {/* MESSAGE */}
               <div>
+
                 <label
                   htmlFor="message"
-                  className="block text-sm font-semibold text-gray-900"
+                  className="block text-xs font-semibold text-gray-900 sm:text-sm"
                 >
                   Message
                 </label>
@@ -270,22 +379,63 @@ export default function ContactUs() {
                 <textarea
                   id="message"
                   name="message"
-                  rows={4}
+                  rows={3}
                   placeholder="Tell us about your travel plans..."
-                  className="mt-2 w-full resize-none rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10"
+                  className="
+                    mt-1.5
+                    w-full
+                    resize-none
+                    rounded-lg
+                    border
+                    border-gray-200
+                    bg-white
+                    px-3
+                    py-2.5
+                    text-xs
+                    text-gray-700
+                    outline-none
+                    transition
+                    focus:border-[#800E13]
+                    focus:ring-2
+                    focus:ring-[#800E13]/10
+
+                    sm:mt-2
+                    sm:px-4
+                    sm:py-3
+                    sm:text-sm
+                  "
                 />
+
               </div>
 
 
               {/* BUTTON */}
               <button
                 type="submit"
-                className="w-full rounded-lg bg-[#800E13] px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#6d0b10] hover:shadow-lg"
+                className="
+                  w-full
+                  rounded-lg
+                  bg-[#800E13]
+                  px-5
+                  py-3
+                  text-xs
+                  font-semibold
+                  text-white
+                  transition-all
+                  duration-300
+                  hover:bg-[#6d0b10]
+                  hover:shadow-lg
+
+                  sm:px-6
+                  sm:py-3.5
+                  sm:text-sm
+                "
               >
                 Send Message
               </button>
 
             </form>
+
           </div>
 
         </div>

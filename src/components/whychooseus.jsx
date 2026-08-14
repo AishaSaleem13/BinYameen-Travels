@@ -1,61 +1,128 @@
-const stats = [
-  { value: "1000+", label: "Pilgrims Depart", highlight: false },
-  { value: "500+", label: "5-Star Reviews", highlight: true },
-  { value: "2+", label: "Years Experience", highlight: false },
-  { value: "100%", label: "Guided Assistance", highlight: false },
+"use client";
+
+import {
+  Globe2,
+  Backpack,
+  Map,
+  Flower2,
+} from "lucide-react";
+
+const features = [
+  {
+    title: "Tour & Travel",
+    description:
+      "Affordable flights, hassle-free visas, and complete holiday packages all in one place.",
+    icon: Globe2,
+  },
+  {
+    title: "Adventure",
+    description:
+      "From Hunza treks to Thailand island tours, we design trips full of thrill and discovery.",
+    icon: Backpack,
+  },
+  {
+    title: "Group Travel",
+    description:
+      "Special discounts for families, student groups, and corporate teams travel together, save more.",
+    icon: Map,
+  },
+  {
+    title: "Local Experiences",
+    description:
+      "Authentic cultural tours, handpicked hotels, and local guides to give you real memories.",
+    icon: Flower2,
+  },
 ];
 
-export default function WhyChooseUs() {
+export default function TravelFeatures() {
   return (
-    <section className="w-full bg-white px-6 py-16 md:px-12 lg:px-20">
-      <div className="mx-auto max-w-5xl text-center">
-        <p className="mb-4 text-sm font-medium text-slate-500">
-          Why Choose Us
-        </p>
+    <section className="w-full bg-[#f5f7ff] px-3 py-8 sm:px-6 sm:py-10 md:px-12 md:py-16 lg:px-20">
+      
+      <div className="mx-auto max-w-7xl">
 
-        <h2 className="mb-6 text-3xl font-medium leading-tight text-slate-900 md:text-5xl">
-          Our Commitment To{" "}
-          <span className="font-serif italic text-indigo-950">
-            The Best Pilgrimage Service
-          </span>{" "}
-          In Pakistan
-        </h2>
+        <div className="grid grid-cols-4">
 
-        <p className="mx-auto mb-12 max-w-3xl text-sm leading-relaxed text-slate-500 md:text-base">
-          For over 2 years,BinYameen &amp; Travelshas been
-          the pilgrimage partner of choice for thousands of Pakistani
-          families. We are not just a travel company, we are your companions
-          on the most sacred journey of your life. Here is why pilgrims
-          return to us, year after year.
-        </p>
-      </div>
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
 
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-4">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className={`flex flex-col items-center justify-center rounded-2xl px-4 py-10 text-center ${
-              stat.highlight
-                ? "bg-indigo-950 text-white"
-                : "bg-slate-100 text-slate-900"
-            }`}
-          >
-            <p
-              className={`mb-3 text-3xl font-bold md:text-4xl ${
-                stat.highlight ? "text-white" : "text-slate-900"
-              }`}
-            >
-              {stat.value}
-            </p>
-            <p
-              className={`text-sm font-semibold md:text-base ${
-                stat.highlight ? "text-amber-400" : "text-indigo-950"
-              }`}
-            >
-              {stat.label}
-            </p>
-          </div>
-        ))}
+            return (
+              <div
+                key={feature.title}
+                className={`
+                  flex
+                  flex-col
+                  items-center
+                  text-center
+                  px-2
+                  py-2
+                  sm:px-4
+                  sm:py-4
+                  md:px-6
+                  md:py-5
+                  ${
+                    index !== 0
+                      ? "border-l border-slate-200"
+                      : ""
+                  }
+                `}
+              >
+
+                {/* ICON */}
+                <div className="mb-3 flex items-center justify-center sm:mb-4 md:mb-5">
+                  <Icon
+                    className="
+                      h-6
+                      w-6
+                      stroke-[1.8]
+                      text-[#2879ff]
+                      sm:h-7
+                      sm:w-7
+                      md:h-8
+                      md:w-8
+                    "
+                  />
+                </div>
+
+                {/* TITLE */}
+                <h3
+                  className="
+                    mb-2
+                    text-[10px]
+                    font-semibold
+                    leading-tight
+                    text-slate-900
+                    sm:mb-2.5
+                    sm:text-xs
+                    md:mb-3
+                    md:text-base
+                  "
+                >
+                  {feature.title}
+                </h3>
+
+                {/* DESCRIPTION */}
+                <p
+                  className="
+                    max-w-[85px]
+                    text-[8px]
+                    leading-[1.5]
+                    text-slate-500
+                    sm:max-w-[130px]
+                    sm:text-[10px]
+                    md:max-w-[220px]
+                    md:text-sm
+                    md:leading-relaxed
+                  "
+                >
+                  {feature.description}
+                </p>
+
+              </div>
+            );
+          })}
+
+        </div>
+
       </div>
     </section>
   );
