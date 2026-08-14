@@ -1,4 +1,5 @@
 import { Heart, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const destinations = [
@@ -93,7 +94,7 @@ export default function PopularDestinations() {
             >
               {/* Image */}
               <div className="aspect-[3/4] w-full overflow-hidden">
-                <img
+                <Image
                   src={dest.image}
                   alt={dest.name}
                   className="

@@ -211,7 +211,7 @@ function Navbarnew({ variant = "dark" }) {
               <Link
              
                href="/umrahpackages">
-                 prefetch={false}
+              
                 Umrah Packages
               </Link>
             </li>
