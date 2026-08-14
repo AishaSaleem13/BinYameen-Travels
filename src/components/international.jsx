@@ -217,7 +217,7 @@ const countries = [
     image: "/baku.jpg",
     places: [
       { id: "baku-old-city", name: "Old City (Icherisheher)", image: "/old.jpeg", blurb: "UNESCO-listed walled city with the Maiden Tower." },
-      { id: "baku-flame-towers", name: "Flame Towers", image: "/flame.jpeg", blurb: "Glass towers that light up the night skyline." },
+      { id: "baku-flame-towers", name: "Flame Towers", image: "/Flame.jpeg", blurb: "Glass towers that light up the night skyline." },
       { id: "baku-boulevard", name: "Baku Boulevard", image: "/boulerve.jpeg", blurb: "Seafront promenade along the Caspian." },
     ],
   },
@@ -226,7 +226,7 @@ const countries = [
     name: "Jeddah",
     image: "/Jaddah.jpg",
     places: [
-      { id: "jeddah-corniche", name: "Jeddah Corniche", image: "/corniche.jpg", blurb: "Waterfront walk with the iconic King Fahd Fountain." },
+      { id: "jeddah-corniche", name: "Jeddah Corniche", image: "/Corniche.jpg", blurb: "Waterfront walk with the iconic King Fahd Fountain." },
       { id: "jeddah-albalad", name: "Al-Balad Old Town", image: "/balad.jpeg", blurb: "Historic coral-stone houses and souks." },
     ],
   },
@@ -256,7 +256,7 @@ const countries = [
     image: "/japan.jpg",
     places: [
       { id: "japan-fuji", name: "Mount Fuji", image: "/MountFuji.jpeg", blurb: "Japan's iconic peak, best seen from Lake Kawaguchi." },
-      { id: "japan-kyoto", name: "Kyoto Temples", image: "/Kyototemple.jpeg", blurb: "Fushimi Inari's torii gates and old geisha streets." },
+      { id: "japan-kyoto", name: "Kyoto Temples", image: "/KyotoeTemple.jpeg", blurb: "Fushimi Inari's torii gates and old geisha streets." },
       { id: "japan-tokyo", name: "Tokyo", image: "/Tokyo.jpeg", blurb: "Neon crossings, Shibuya, and Asakusa's ancient temple." },
     ],
   },
