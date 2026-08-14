@@ -69,12 +69,14 @@ function StatsBento() {
         />
 
         {/* Floating Contact Us pill — sits on the seam between col 2 and col 3 */}
-        <button
+       <Link href="/Contact"
+       
           type="button"
           className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border border-[#800E13] bg-white px-5 py-2.5 text-xs font-semibold text-[#800E13] shadow-md transition hover:bg-red-50 sm:text-sm lg:left-2/3"
         >
           Contact Us
-        </button>
+     
+       </Link>
 
         {/* img 2 — tall, spans both rows on desktop */}
         <div className="overflow-hidden rounded-2xl md:col-span-3 lg:col-span-1 lg:row-span-2">
@@ -181,7 +183,7 @@ const countries = [
   {
     id: "bali",
     name: "Bali",
-    image: "/bali.jpg",
+    image: "/Bali.jpg",
     places: [
       { id: "bali-ubud", name: "Ubud Rice Terraces", image: "/Terrace.jpg", blurb: "Emerald terraced paddies and jungle art villages." },
       { id: "bali-uluwatu", name: "Uluwatu Temple", image: "/Temple.jpeg", blurb: "Clifftop temple with sweeping Indian Ocean sunsets." },
@@ -221,7 +223,7 @@ const countries = [
   {
     id: "jeddah",
     name: "Jeddah",
-    image: "/jaddah.jpg",
+    image: "/Jaddah.jpg",
     places: [
       { id: "jeddah-corniche", name: "Jeddah Corniche", image: "/corniche.jpg", blurb: "Waterfront walk with the iconic King Fahd Fountain." },
       { id: "jeddah-albalad", name: "Al-Balad Old Town", image: "/balad.jpeg", blurb: "Historic coral-stone houses and souks." },
@@ -297,15 +299,6 @@ function AboutUsGrid() {
             </p>
           </div>
 
-          <a
-            href="#"
-            className="group hidden shrink-0 items-center gap-2 text-sm font-semibold text-slate-900 lg:flex"
-          >
-            View all destinations
-            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-slate-300 transition group-hover:border-[#800E13] group-hover:bg-[#800E13] group-hover:text-white">
-              <ArrowUpRight size={14} />
-            </span>
-          </a>
         </div>
         <div className="mt-8 h-px w-full bg-slate-200" />
       </div>
@@ -375,23 +368,31 @@ function AboutUsGrid() {
                   Places to visit in {selectedCountry.name}
                 </h3>
               </div>
+<div className="flex  flex-row gap-2 sm:gap-3">
+  <Link
+    href={`/BookingForm?PackageId=${encodeURIComponent(
+      selectedCountry.id
+    )}&PackageName=${encodeURIComponent(
+      selectedCountry.name
+    )}&PackageImage=${encodeURIComponent(selectedCountry.image)}`}
+    className="flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-xs bg-[#800E13] px-3 py-2.5 text-center text-sm font-semibold leading-tight text-white transition hover:bg-[#63080e] sm:px-5 sm:py-3 sm:text-xs"
+  >
+    <span className="truncate">
+      Explore {selectedCountry.name}
+    </span>
+    <ArrowUpRight className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+  </Link>
 
-             <Link
-              href={`/BookingForm?PackageId=${encodeURIComponent(selectedCountry.id)}&PackageName=${encodeURIComponent(selectedCountry.name)}&PackageImage=${encodeURIComponent(selectedCountry.image)}`}
-                className="flex items-center justify-center gap-2 rounded-full bg-[#800E13] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#63080e]"
-              >
-                Explore {selectedCountry.name}
-                <ArrowUpRight size={16} />
-              
-             </Link>
-              <Link
-              href={`/Customize?TripType=International`}
-                className="flex items-center justify-center gap-2 rounded-full bg-[#800E13] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#63080e]"
-              >
-                Customize {selectedCountry.name} Package
-                <ArrowUpRight size={16} />
-              
-             </Link>
+  <Link
+    href={`/Customize?TripType=International`}
+    className="flex min-w-0 flex-1 items-center justify-center gap-1.5 rounded-xs bg-[#800E13] px-3 py-2.5 text-center text-sm font-semibold leading-tight text-white transition hover:bg-[#63080e] sm:px-5 sm:py-3 sm:text-xs"
+  >
+    <span className="line-clamp-2">
+      Customize {selectedCountry.name} Package
+    </span>
+    <ArrowUpRight className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" />
+  </Link>
+</div>
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

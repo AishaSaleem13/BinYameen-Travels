@@ -1,20 +1,24 @@
 "use client";
 
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 const activities = [
   {
     title: "Umrah Packages",
+    href: "/umrahpackages",
     image:
       "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "International Tour",
+    href: "/internationalpage",
     image:
       "https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Northern Tour",
+    href: "/Northtour",
     image:
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop",
   },
@@ -27,7 +31,6 @@ export default function CuratedActivities() {
 
         {/* ================= HEADER ================= */}
         <div className="mb-7 text-center sm:mb-10">
-
           <p className="mb-2 flex items-center justify-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#800E13] sm:gap-2 sm:text-sm sm:tracking-[0.2em]">
             <Sparkles className="h-3 w-3 sm:h-4 sm:w-4" />
             What We Offer
@@ -36,19 +39,19 @@ export default function CuratedActivities() {
           <h2 className="text-xl font-bold leading-tight text-slate-900 sm:text-2xl md:text-3xl">
             Curated Luxury Trips &amp; Experiences
           </h2>
-
         </div>
 
         {/* ================= CARDS ================= */}
-        {/* 3 COLUMNS ON ALL SCREEN SIZES */}
         <div className="grid grid-cols-3 gap-2 sm:gap-5 lg:gap-8">
 
           {activities.map((activity) => (
-            <div
+            <Link
               key={activity.title}
+              href={activity.href}
               className="
                 group
                 relative
+                block
                 overflow-hidden
                 rounded-xl
                 bg-slate-900
@@ -66,7 +69,6 @@ export default function CuratedActivities() {
 
               {/* ================= IMAGE ================= */}
               <div className="aspect-[4/5] w-full overflow-hidden">
-
                 <img
                   src={activity.image}
                   alt={activity.title}
@@ -81,7 +83,6 @@ export default function CuratedActivities() {
                     lg:group-hover:scale-110
                   "
                 />
-
               </div>
 
               {/* ================= GRADIENT ================= */}
@@ -169,8 +170,6 @@ export default function CuratedActivities() {
                   lg:p-6
                 "
               >
-
-                {/* Red line */}
                 <div
                   className="
                     mb-1.5
@@ -203,7 +202,7 @@ export default function CuratedActivities() {
                   {activity.title}
                 </h3>
 
-                {/* Desktop hover text only */}
+                {/* Desktop hover text */}
                 <div
                   className="
                     mt-0
@@ -224,21 +223,21 @@ export default function CuratedActivities() {
                     <ArrowUpRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
-
               </div>
 
-            </div>
+            </Link>
           ))}
 
         </div>
 
         {/* ================= ENQUIRY ================= */}
-        <button
-          type="button"
+        <Link
+          href="/Contact"
           className="
             mx-auto
             mt-7
             block
+            w-fit
             rounded-full
             border
             border-slate-300
@@ -258,7 +257,7 @@ export default function CuratedActivities() {
           "
         >
           Enquiry
-        </button>
+        </Link>
 
       </div>
     </section>

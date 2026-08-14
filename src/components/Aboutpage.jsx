@@ -30,7 +30,7 @@ export default function CraftedEscapesHero() {
     {/* Heading */}
     <div className="absolute inset-0 mx-auto flex max-w-7xl items-center px-5 sm:px-7 md:px-10">
       <h1
-        className="max-w-[55%] text-3xl font-semibold leading-tight text-white drop-shadow-md sm:text-4xl md:max-w-xl md:text-5xl"
+        className="max-w-[55%] text-3xl font-semibold leading-tight text-white drop-shadow-md sm:text-2xl md:max-w-xl md:text-5xl"
         style={{ fontFamily: "var(--font-display)" }}
       >
         Sit Back, Relax, and Let Us Craft Your Perfect Escape
