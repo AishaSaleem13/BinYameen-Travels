@@ -121,7 +121,7 @@ export default function BookingWidget({
         PhoneNumber: "",
         Email: "",
         NoOfPerson: "",
-        Month: "",
+        Month: "2026-",
         Message: "",
         PackageId: PackageId || "",
       });
@@ -350,26 +350,28 @@ export default function BookingWidget({
 
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
 
-                  <Field label="Travellers" icon={Users}>
-                    <input
-                      type="number"
-                      min="1"
-                      placeholder="No. of persons"
-                      value={formData.NoOfPerson}
-                      onChange={updateField("NoOfPerson")}
-                      className={inputClasses}
-                    />
-                  </Field>
+                <Field label="Travellers" icon={Users}>
+  <input
+    type="number"
+    min="1"
+    step="1"
+    inputMode="numeric"
+    placeholder="No. of persons"
+    value={formData.NoOfPerson}
+    onChange={updateField("NoOfPerson")}
+    className={`${inputClasses} cursor-text`}
+  />
+</Field>
 
-                  <Field label="Travel Month" icon={CalendarDays}>
-                    <input
-                      type="month"
-                      value={formData.Month}
-                      onChange={updateField("Month")}
-                      className={inputClasses}
-                    />
-                  </Field>
-
+<Field label="Travel Month" icon={CalendarDays}>
+  <input
+    type="text"
+    placeholder="e.g. January"
+    value={formData.Month}
+    onChange={updateField("Month")}
+    className={`${inputClasses} cursor-text`}
+  />
+</Field>
                 </div>
 
                 {/* MESSAGE */}
