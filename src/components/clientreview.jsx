@@ -21,14 +21,14 @@ const testimonials = [
     location: "Karachi, Pakistan",
     poster:
       "/poster.jpg",
-    video: "/videoc5.mp4",
+    video:"/videoc5.mp4",
   },
   {
     name: "Mr. Muhammad Asad",
     location: "Karachi, Pakistan",
     poster:
     "/poster.jpg",
-    video: "/video6.mp4",
+    video:"/video6.mp4",
   },
   {
     name: "Mr. Muhammad Manzoor Ahmed",
@@ -225,7 +225,7 @@ export default function ValuedPilgrims() {
                     poster={item.poster}
                     controls
                     playsInline
-                    preload="none"
+                    preload="metadata"
                     onPlay={() => setPlaying(index, true)}
                     onPause={() => setPlaying(index, false)}
                     onEnded={() => setPlaying(index, false)}
