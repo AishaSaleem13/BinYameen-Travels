@@ -13,14 +13,14 @@ const services = [
   { name: "Umrah", href: "/umrahpackages" },
   { name: "International Tours", href: "/internationalpage" },
   { name: "Northern Tours", href: "/Northtour" },
-  { name: "Flight Booking", href: "/booking" },
-  { name: "Hotel Booking", href: "/booking" },
+  { name: "Flight Booking", href: "/BookingForm" },
+  { name: "Hotel Booking", href: "/BookingForm" },
 ];
 
 const support = [
   { name: "Contact Us", href: "/Contact" },
-  { name: "FAQs", href: "/faq" },
-  { name: "Booking Guide", href: "/booking" },
+  { name: "FAQs", href: "/BookingForm" },
+  { name: "Booking Guide", href: "/BookingForm" },
 ];
 
 const company = [

@@ -141,7 +141,7 @@ function Hero() {
   return (
     <div className="relative mx-4 mt-26 overflow-hidden rounded-2xl sm:mx-8">
       <video
-        src="/video 2.mp4"
+        src="/compressed2.mp4"
         autoPlay
         muted
         loop

@@ -43,7 +43,8 @@ function Navbarnew({ variant = "dark" }) {
       {/* ================= LOGO ================= */}
 
       <div className="navbar-start">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2"
+         prefetch={false}>
           <Image
             src={isDark ? "/t.png" : "/logoblack.png"}
             alt="Bin Yameen Travel logo"
@@ -68,13 +69,18 @@ function Navbarnew({ variant = "dark" }) {
           className={`menu menu-horizontal gap-2 px-1 ${textColor}`}
         >
           <li>
-            <Link href="/" className={hoverColor}>
+            <Link 
+            href="/"
+            prefetch={false}
+             className={hoverColor}>
               Home
             </Link>
           </li>
 
           <li>
-            <Link href="/aboutpage" className={hoverColor}>
+            <Link href="/aboutpage"
+            prefetch={false}
+            className={hoverColor}>
               About us
             </Link>
           </li>
@@ -93,6 +99,7 @@ function Navbarnew({ variant = "dark" }) {
           <li>
             <Link
               href="/internationalpage"
+              prefetch={false}
               className={hoverColor}
             >
               International Tours
@@ -102,6 +109,7 @@ function Navbarnew({ variant = "dark" }) {
           <li>
             <Link
               href="/Northtour"
+              prefetch={false}
               className={hoverColor}
             >
               Northern Tours
@@ -109,7 +117,8 @@ function Navbarnew({ variant = "dark" }) {
           </li>
 
           <li>
-            <Link href="/Contact" className={hoverColor}>
+            <Link href="/Contact" className={hoverColor}
+            prefetch={false}>
               Contact
             </Link>
           </li>
@@ -198,11 +207,13 @@ function Navbarnew({ variant = "dark" }) {
             className="menu menu-sm dropdown-content z-50 mt-3 w-64 rounded-box bg-white p-3 text-black shadow-xl"
           >
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/"
+               prefetch={false}>Home</Link>
             </li>
 
             <li>
-              <Link href="/aboutpage">
+              <Link href="/aboutpage"
+              prefetch={false}>
                 About us
               </Link>
             </li>
@@ -210,26 +221,30 @@ function Navbarnew({ variant = "dark" }) {
             <li>
               <Link
              
-               href="/umrahpackages">
+               href="/umrahpackages"
+               prefetch={false}>
               
                 Umrah Packages
               </Link>
             </li>
 
             <li>
-              <Link href="/internationalpage">
+              <Link href="/internationalpage"
+              prefetch={false}>
                 International Tours
               </Link>
             </li>
 
             <li>
-              <Link href="/Northtour">
+              <Link href="/Northtour"
+              prefetch={false}>
                 Northern Tours
               </Link>
             </li>
 
             <li>
-              <Link href="/Contact">
+              <Link href="/Contact"
+              prefetch={false}>
                 Contact
               </Link>
             </li>
