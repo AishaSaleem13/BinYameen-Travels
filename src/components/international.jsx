@@ -384,6 +384,14 @@ function AboutUsGrid() {
                 <ArrowUpRight size={16} />
               
              </Link>
+              <Link
+              href={`/Customize?TripType=International`}
+                className="flex items-center justify-center gap-2 rounded-full bg-[#800E13] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#63080e]"
+              >
+                Customize {selectedCountry.name} Package
+                <ArrowUpRight size={16} />
+              
+             </Link>
             </div>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

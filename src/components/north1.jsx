@@ -44,6 +44,8 @@ export default function PopularDestinations() {
               Popular Destinations
             </h2>
           </div>
+          <Link href={`/Customize?TripType=Northern`}
+          className="px-3 py-2 bg-[#800E13] font-serif text-md text-white rounded-2xl">Customize your Trip</Link>
         </div>
 
         {/* Cards */}

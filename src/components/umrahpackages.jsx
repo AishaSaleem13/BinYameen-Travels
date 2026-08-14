@@ -418,10 +418,10 @@ export default function UmrahPackages() {
   </Link>
 
     {/* Customize Package */}
-   <Link  href="/Customize?type=Umrah">
+   <Link  href="/Customize?TripType=Umrah">
     <button
       type="button"
-      onClick={() => openCustomize(pkg)}
+     
       className={`
         group/customize
         flex
