@@ -149,7 +149,7 @@ function About() {
               >
 
                 <img
-                  src="/img.jpg"
+                  src="/img.webp"
                   alt="Travel destination"
                   className="
                     h-full

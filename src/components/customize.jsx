@@ -22,7 +22,7 @@ function Customize() {
 
           {/* Background Image */}
           <img
-            src="/img.jpg"
+            src="/img.webp"
             alt="Aerial view of turquoise ocean and beach"
             className="absolute inset-0 h-full w-full object-cover"
           />

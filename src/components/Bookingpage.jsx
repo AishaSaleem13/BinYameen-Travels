@@ -27,7 +27,7 @@ function Bookingpage() {
         <div className="relative h-[420px] w-full overflow-hidden md:h-[460px]">
 
           <img
-            src="/img.jpg"
+            src="/img.webp"
             alt="Travel"
             className="h-full w-full object-cover"
           />

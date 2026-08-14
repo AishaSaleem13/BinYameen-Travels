@@ -17,7 +17,7 @@ function Nothern() {
           
           {/* Background Image */}
           <Image
-            src="/img.jpg"
+            src="/img.webp"
             fill
             alt="Aerial view of turquoise ocean and beach"
             className="h-full w-full object-cover object-center"
