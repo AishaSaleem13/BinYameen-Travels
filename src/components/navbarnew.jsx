@@ -81,7 +81,9 @@ function Navbarnew({ variant = "dark" }) {
 
           <li>
             <Link
+           
               href="/umrahpackages"
+               prefetch={false}
               className={hoverColor}
             >
               Umrah Packages
@@ -206,7 +208,10 @@ function Navbarnew({ variant = "dark" }) {
             </li>
 
             <li>
-              <Link href="/umrahpackages">
+              <Link
+             
+               href="/umrahpackages">
+                 prefetch={false}
                 Umrah Packages
               </Link>
             </li>
