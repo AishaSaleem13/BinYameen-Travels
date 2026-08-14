@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect } from "react";
@@ -9,7 +8,6 @@ import Image from "next/image";
 import {
   FaFacebookF,
   FaInstagram,
-
 } from "react-icons/fa";
 
 function Navbarnew({ variant = "dark" }) {
@@ -24,9 +22,7 @@ function Navbarnew({ variant = "dark" }) {
 
   const isDark = variant === "dark";
 
-  const textColor = isDark
-    ? "text-white"
-    : "text-[#241C17]";
+  const textColor = isDark ? "text-white" : "text-[#241C17]";
 
   const hoverColor = isDark
     ? "hover:bg-white/10"
@@ -35,16 +31,13 @@ function Navbarnew({ variant = "dark" }) {
   return (
     <div
       className={`navbar absolute left-0 right-0 top-0 z-50 px-6 py-4 lg:px-12 ${
-        isDark
-          ? "bg-transparent"
-          : "bg-white shadow-sm"
+        isDark ? "bg-transparent" : "bg-white shadow-sm"
       }`}
     >
       {/* ================= LOGO ================= */}
 
       <div className="navbar-start">
-        <Link href="/" className="flex items-center gap-2"
-         prefetch={false}>
+        <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <Image
             src={isDark ? "/t.png" : "/logoblack.png"}
             alt="Bin Yameen Travel logo"
@@ -69,27 +62,25 @@ function Navbarnew({ variant = "dark" }) {
           className={`menu menu-horizontal gap-2 px-1 ${textColor}`}
         >
           <li>
-            <Link 
-            href="/"
-            prefetch={false}
-             className={hoverColor}>
+            <Link href="/" prefetch={false} className={hoverColor}>
               Home
             </Link>
           </li>
 
           <li>
-            <Link href="/aboutpage"
-            prefetch={false}
-            className={hoverColor}>
+            <Link
+              href="/aboutpage"
+              prefetch={false}
+              className={hoverColor}
+            >
               About us
             </Link>
           </li>
 
           <li>
             <Link
-           
               href="/umrahpackages"
-               prefetch={false}
+              prefetch={false}
               className={hoverColor}
             >
               Umrah Packages
@@ -117,8 +108,11 @@ function Navbarnew({ variant = "dark" }) {
           </li>
 
           <li>
-            <Link href="/Contact" className={hoverColor}
-            prefetch={false}>
+            <Link
+              href="/Contact"
+              prefetch={false}
+              className={hoverColor}
+            >
               Contact
             </Link>
           </li>
@@ -128,11 +122,19 @@ function Navbarnew({ variant = "dark" }) {
       {/* ================= RIGHT SIDE ================= */}
 
       <div className="navbar-end">
-        {/* Desktop Social Icons */}
+        {/* Desktop Social Icons + Book Button */}
 
         <div
           className={`hidden items-center gap-2 lg:flex ${textColor}`}
         >
+            <Link
+            href="/Customize"
+            prefetch={false}
+            className="ml-2 rounded-full bg-[#800E13] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#650B0F]"
+          >
+            Customize
+          </Link>
+        
           <a
             href="https://www.instagram.com/binyameentravels/"
             target="_blank"
@@ -160,23 +162,12 @@ function Navbarnew({ variant = "dark" }) {
           >
             <FaFacebookF className="h-4 w-4" />
           </a>
+</div>
+          {/* Desktop Book Button */}
 
-          {/* <a
-            href="https://wa.me/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-            className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
-              isDark
-                ? "hover:bg-white/10"
-                : "hover:bg-[#800E13]/10"
-            }`}
-          >
-            <FaWhatsapp className="h-4 w-4" />
-          </a> */}
-        </div>
+        
 
-        {/* Mobile Menu */}
+        {/* ================= MOBILE MENU ================= */}
 
         <div className="dropdown dropdown-end lg:hidden">
           <div
@@ -207,60 +198,65 @@ function Navbarnew({ variant = "dark" }) {
             className="menu menu-sm dropdown-content z-50 mt-3 w-64 rounded-box bg-white p-3 text-black shadow-xl"
           >
             <li>
-              <Link href="/"
-               prefetch={false}>Home</Link>
+              <Link href="/" prefetch={false}>
+                Home
+              </Link>
             </li>
 
             <li>
-              <Link href="/aboutpage"
-              prefetch={false}>
+              <Link href="/aboutpage" prefetch={false}>
                 About us
               </Link>
             </li>
 
             <li>
-              <Link
-             
-               href="/umrahpackages"
-               prefetch={false}>
-              
+              <Link href="/umrahpackages" prefetch={false}>
                 Umrah Packages
               </Link>
             </li>
 
             <li>
-              <Link href="/internationalpage"
-              prefetch={false}>
+              <Link href="/internationalpage" prefetch={false}>
                 International Tours
               </Link>
             </li>
 
             <li>
-              <Link href="/Northtour"
-              prefetch={false}>
+              <Link href="/Northtour" prefetch={false}>
                 Northern Tours
               </Link>
             </li>
 
             <li>
-              <Link href="/Contact"
-              prefetch={false}>
+              <Link href="/Contact" prefetch={false}>
                 Contact
               </Link>
             </li>
 
-            {/* Social Icons */}
+            {/* ================= MOBILE BOOK BUTTON ================= */}
+
+            <li className="mt-2">
+              <Link
+                href="/Customize"
+                prefetch={false}
+                className="!justify-center rounded-lg !bg-[#800E13] !py-3 !font-semibold !text-white hover:!bg-[#650B0F]"
+              >
+                Customize
+              </Link>
+            </li>
+
+            {/* ================= SOCIAL ICONS ================= */}
 
             <div className="mt-3 flex items-center justify-center gap-3 border-t border-gray-100 pt-4">
-            <a
-  href="https://www.instagram.com/binyameentravels?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Instagram"
-  className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-[#800E13] hover:text-white"
->
-  <FaInstagram />
-</a>
+              <a
+                href="https://www.instagram.com/binyameentravels/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-[#800E13] hover:text-white"
+              >
+                <FaInstagram />
+              </a>
 
               <a
                 href="https://www.facebook.com/share/199i7B1Tyy/?mibextid=wwXIfr"
@@ -271,16 +267,6 @@ function Navbarnew({ variant = "dark" }) {
               >
                 <FaFacebookF />
               </a>
-
-              {/* <a
-                href="https:"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-[#800E13] hover:text-white"
-              >
-                <FaWhatsapp />
-              </a> */}
             </div>
           </ul>
         </div>
@@ -290,4 +276,3 @@ function Navbarnew({ variant = "dark" }) {
 }
 
 export default Navbarnew;
-

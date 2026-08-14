@@ -1,28 +1,71 @@
 "use client";
 
+import { useState } from "react";
+import { Bookingapi } from "../../environment";
+
 export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    FullName: "",
+    PhoneNumber: "",
+    Email: "",
+    Message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setStatus("");
+
+    try {
+      const response = await fetch(Bookingapi, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Something went wrong");
+      }
+
+      setStatus("Message sent successfully!");
+
+      setFormData({
+        FullName: "",
+        PhoneNumber: "",
+        Email: "",
+        Message: "",
+      });
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setStatus("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="w-full bg-gray-50 py-10 sm:py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-10 lg:px-14">
+        <div className="grid overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm lg:grid-cols-3 lg:rounded-2xl">
 
-        <div
-          className="
-            grid
-            overflow-hidden
-            rounded-xl
-            border
-            border-gray-100
-            bg-white
-            shadow-sm
-
-            lg:grid-cols-3
-            lg:rounded-2xl
-          "
-        >
-
-          {/* =====================================================
-              LEFT — CONTACT INFO
-          ===================================================== */}
+          {/* LEFT — CONTACT INFO */}
           <div className="p-6 sm:p-8 md:p-10">
 
             <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#800E13] sm:text-sm">
@@ -46,11 +89,9 @@ export default function ContactUs() {
             {/* CONTACT DETAILS */}
             <div className="mt-6 space-y-5 border-t border-gray-100 pt-6 sm:mt-7 sm:space-y-6 sm:pt-7">
 
-              {/* ================= HEAD OFFICE ================= */}
+              {/* HEAD OFFICE */}
               <div className="flex items-start gap-3 sm:gap-4">
-
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13] sm:h-11 sm:w-11">
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -66,11 +107,9 @@ export default function ContactUs() {
                     />
                     <circle cx="12" cy="10" r="2.5" />
                   </svg>
-
                 </span>
 
                 <div className="min-w-0">
-
                   <p className="text-sm font-semibold text-gray-900 sm:text-base">
                     Head Office
                   </p>
@@ -79,16 +118,12 @@ export default function ContactUs() {
                     Plot C, 22 Commercial Area, Sector Z DHA Phase 3,
                     Lahore, 56000
                   </p>
-
                 </div>
               </div>
 
-
-              {/* ================= EMAIL ================= */}
+              {/* EMAIL */}
               <div className="flex items-start gap-3 sm:gap-4">
-
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13] sm:h-11 sm:w-11">
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -97,25 +132,16 @@ export default function ContactUs() {
                     strokeWidth="1.8"
                     className="h-4 w-4 sm:h-5 sm:w-5"
                   >
-                    <rect
-                      x="3"
-                      y="5"
-                      width="18"
-                      height="14"
-                      rx="2"
-                    />
-
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       d="m4 7 8 6 8-6"
                     />
                   </svg>
-
                 </span>
 
                 <div className="min-w-0">
-
                   <p className="text-sm font-semibold text-gray-900 sm:text-base">
                     Email Support
                   </p>
@@ -126,16 +152,12 @@ export default function ContactUs() {
                   >
                     binyameen.6363@gmail.com
                   </a>
-
                 </div>
               </div>
 
-
-              {/* ================= PHONE ================= */}
+              {/* PHONE */}
               <div className="flex items-start gap-3 sm:gap-4">
-
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13] sm:h-11 sm:w-11">
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -161,17 +183,14 @@ export default function ContactUs() {
                       A2 2 0 0 1 22 16.92Z"
                     />
                   </svg>
-
                 </span>
 
                 <div>
-
                   <p className="text-sm font-semibold text-gray-900 sm:text-base">
                     Contact Number
                   </p>
 
                   <div className="mt-1 space-y-1 text-[12px] text-gray-500 sm:text-sm">
-
                     <a
                       href="tel:+923422673475"
                       className="block transition-colors hover:text-[#800E13]"
@@ -192,19 +211,14 @@ export default function ContactUs() {
                     >
                       +92 326 3569976
                     </a>
-
                   </div>
-
                 </div>
               </div>
 
             </div>
           </div>
 
-
-          {/* =====================================================
-              MIDDLE — IMAGE
-          ===================================================== */}
+          {/* MIDDLE — IMAGE */}
           <div className="relative h-[260px] sm:h-[340px] md:h-[400px] lg:h-auto lg:min-h-0">
 
             <img
@@ -217,10 +231,7 @@ export default function ContactUs() {
 
           </div>
 
-
-          {/* =====================================================
-              RIGHT — FORM
-          ===================================================== */}
+          {/* RIGHT — FORM */}
           <div className="bg-gray-50/70 p-6 sm:p-8 md:p-10">
 
             <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#800E13] sm:text-sm">
@@ -236,13 +247,14 @@ export default function ContactUs() {
               get back to you.
             </p>
 
-
-            {/* ================= FORM ================= */}
-            <form className="mt-5 space-y-4 sm:mt-7 sm:space-y-5">
+            {/* FORM */}
+            <form
+              onSubmit={handleSubmit}
+              className="mt-5 space-y-4 sm:mt-7 sm:space-y-5"
+            >
 
               {/* NAME */}
               <div>
-
                 <label
                   htmlFor="name"
                   className="block text-xs font-semibold text-gray-900 sm:text-sm"
@@ -252,81 +264,18 @@ export default function ContactUs() {
 
                 <input
                   id="name"
-                  name="name"
+                  name="FullName"
                   type="text"
+                  value={formData.FullName}
+                  onChange={handleChange}
+                  required
                   placeholder="Your name"
-                  className="
-                    mt-1.5
-                    w-full
-                    rounded-lg
-                    border
-                    border-gray-200
-                    bg-white
-                    px-3
-                    py-2.5
-                    text-xs
-                    text-gray-700
-                    outline-none
-                    transition
-                    focus:border-[#800E13]
-                    focus:ring-2
-                    focus:ring-[#800E13]/10
-
-                    sm:mt-2
-                    sm:px-4
-                    sm:py-3
-                    sm:text-sm
-                  "
+                  className="mt-1.5 w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-xs text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10 sm:mt-2 sm:px-4 sm:py-3 sm:text-sm"
                 />
-
               </div>
-
-
-              {/* EMAIL */}
-              <div>
-
-                <label
-                  htmlFor="email"
-                  className="block text-xs font-semibold text-gray-900 sm:text-sm"
-                >
-                  Email
-                </label>
-
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  className="
-                    mt-1.5
-                    w-full
-                    rounded-lg
-                    border
-                    border-gray-200
-                    bg-white
-                    px-3
-                    py-2.5
-                    text-xs
-                    text-gray-700
-                    outline-none
-                    transition
-                    focus:border-[#800E13]
-                    focus:ring-2
-                    focus:ring-[#800E13]/10
-
-                    sm:mt-2
-                    sm:px-4
-                    sm:py-3
-                    sm:text-sm
-                  "
-                />
-
-              </div>
-
 
               {/* PHONE */}
               <div>
-
                 <label
                   htmlFor="contact"
                   className="block text-xs font-semibold text-gray-900 sm:text-sm"
@@ -336,39 +285,39 @@ export default function ContactUs() {
 
                 <input
                   id="contact"
-                  name="contact"
+                  name="PhoneNumber"
                   type="tel"
+                  value={formData.PhoneNumber}
+                  onChange={handleChange}
+                  required
                   placeholder="+92 XXX XXXXXXX"
-                  className="
-                    mt-1.5
-                    w-full
-                    rounded-lg
-                    border
-                    border-gray-200
-                    bg-white
-                    px-3
-                    py-2.5
-                    text-xs
-                    text-gray-700
-                    outline-none
-                    transition
-                    focus:border-[#800E13]
-                    focus:ring-2
-                    focus:ring-[#800E13]/10
-
-                    sm:mt-2
-                    sm:px-4
-                    sm:py-3
-                    sm:text-sm
-                  "
+                  className="mt-1.5 w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-xs text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10 sm:mt-2 sm:px-4 sm:py-3 sm:text-sm"
                 />
-
               </div>
 
+              {/* EMAIL */}
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-xs font-semibold text-gray-900 sm:text-sm"
+                >
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  name="Email"
+                  type="email"
+                  value={formData.Email}
+                  onChange={handleChange}
+                  required
+                  placeholder="you@example.com"
+                  className="mt-1.5 w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-xs text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10 sm:mt-2 sm:px-4 sm:py-3 sm:text-sm"
+                />
+              </div>
 
               {/* MESSAGE */}
               <div>
-
                 <label
                   htmlFor="message"
                   className="block text-xs font-semibold text-gray-900 sm:text-sm"
@@ -378,64 +327,39 @@ export default function ContactUs() {
 
                 <textarea
                   id="message"
-                  name="message"
+                  name="Message"
                   rows={3}
+                  value={formData.Message}
+                  onChange={handleChange}
+                  required
                   placeholder="Tell us about your travel plans..."
-                  className="
-                    mt-1.5
-                    w-full
-                    resize-none
-                    rounded-lg
-                    border
-                    border-gray-200
-                    bg-white
-                    px-3
-                    py-2.5
-                    text-xs
-                    text-gray-700
-                    outline-none
-                    transition
-                    focus:border-[#800E13]
-                    focus:ring-2
-                    focus:ring-[#800E13]/10
-
-                    sm:mt-2
-                    sm:px-4
-                    sm:py-3
-                    sm:text-sm
-                  "
+                  className="mt-1.5 w-full resize-none rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-xs text-gray-700 outline-none transition focus:border-[#800E13] focus:ring-2 focus:ring-[#800E13]/10 sm:mt-2 sm:px-4 sm:py-3 sm:text-sm"
                 />
-
               </div>
 
+              {/* STATUS */}
+              {status && (
+                <p
+                  className={`text-center text-sm font-medium ${
+                    status.includes("successfully")
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }`}
+                >
+                  {status}
+                </p>
+              )}
 
               {/* BUTTON */}
               <button
                 type="submit"
-                className="
-                  w-full
-                  rounded-lg
-                  bg-[#800E13]
-                  px-5
-                  py-3
-                  text-xs
-                  font-semibold
-                  text-white
-                  transition-all
-                  duration-300
-                  hover:bg-[#6d0b10]
-                  hover:shadow-lg
-
-                  sm:px-6
-                  sm:py-3.5
-                  sm:text-sm
-                "
+                disabled={loading}
+                className="w-full rounded-lg bg-[#800E13] px-5 py-3 text-xs font-semibold text-white transition-all duration-300 hover:bg-[#6d0b10] hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60 sm:px-6 sm:py-3.5 sm:text-sm"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
 
             </form>
-
           </div>
 
         </div>
