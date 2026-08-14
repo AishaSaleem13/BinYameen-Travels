@@ -13,28 +13,28 @@ const testimonials = [
     name: "Mr. Muhammad Osama Ashqeen",
     location: "Karachi, Pakistan",
     poster:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=600&auto=format&fit=crop",
+    "/poster.jpg",
     video: "/videoreview.mp4",
   },
   {
     name: "Muhammad Fareed Shaikh",
     location: "Karachi, Pakistan",
     poster:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=600&auto=format&fit=crop",
+      "/poster.jpg",
     video: "/videoc5.mp4",
   },
   {
     name: "Mr. Muhammad Asad",
     location: "Karachi, Pakistan",
     poster:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=600&auto=format&fit=crop",
+    "/poster.jpg",
     video: "/video6.mp4",
   },
   {
     name: "Mr. Muhammad Manzoor Ahmed",
     location: "Karachi, Pakistan",
     poster:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=600&auto=format&fit=crop",
+          "/poster.jpg",
     video: "/video4.mp4",
   },
 ];
@@ -225,7 +225,7 @@ export default function ValuedPilgrims() {
                     poster={item.poster}
                     controls
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     onPlay={() => setPlaying(index, true)}
                     onPause={() => setPlaying(index, false)}
                     onEnded={() => setPlaying(index, false)}

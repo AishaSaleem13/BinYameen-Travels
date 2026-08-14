@@ -59,11 +59,11 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-[#111111] text-white">
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="/mountains-bg.jpg"
           alt=""
           className="h-full w-full object-cover opacity-20"
-        />
+        /> */}
 
         <div className="absolute inset-0 bg-black/75" />
       </div>

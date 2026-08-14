@@ -97,9 +97,12 @@ export default function PopularDestinations() {
                 <Image
                   src={dest.image}
                   alt={dest.name}
+                        fill
+                         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                   className="
                     h-full
                     w-full
+              
                     object-cover
                     transition-transform
                     duration-300

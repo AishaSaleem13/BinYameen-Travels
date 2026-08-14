@@ -7,6 +7,7 @@ import ContactUs from "./Contact";
 import Footer from "./footer";
 import HappyTravelers from "./happttraveler";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function InternationalPage() {
   return (
@@ -312,10 +313,11 @@ function AboutUsGrid() {
               key={item.id}
               className="group relative h-60 overflow-hidden rounded-2xl shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:h-64 lg:h-72"
             >
-              <img
+              <Image
                 src={item.image}
                 alt={item.name}
-            
+            fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 
                 className="object-cover h-full w-full transition duration-500 group-hover:scale-105"
               />
@@ -404,9 +406,11 @@ function AboutUsGrid() {
                   className="overflow-hidden rounded-xl bg-white shadow-sm"
                 >
               <div className="relative h-60 w-full overflow-hidden">
-  <img
+  <Image
+  fill
     src={place.image}
     alt={place.name}
+       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
     loading="lazy"
     className="h-60 w-full object-cover"
   />

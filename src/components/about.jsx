@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 function About() {
@@ -91,7 +92,8 @@ function About() {
               lifetime&rdquo;.
             </p>
 
-            <button
+       <Link
+       href="/aboutpage"
               className="
                 rounded-md
                 bg-[#1c3a52]
@@ -111,7 +113,8 @@ function About() {
               "
             >
               Know More
-            </button>
+           
+       </Link>
 
           </div>
 

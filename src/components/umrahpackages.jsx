@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -146,9 +147,11 @@ export default function UmrahPackages() {
                 `}
               >
 
-                <img
+                <Image
                   src={pkg.image}
                   alt={`${pkg.name} - Bin Yameen Travels`}
+                  fill
+  sizes="(max-width: 1024px) 100vw, 33vw"
                   className="
                     h-full
                     w-full

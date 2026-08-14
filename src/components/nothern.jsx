@@ -4,7 +4,8 @@ import Footer from "./footer";
 import PopularDestinations from "./north1";
 import HappyTravelers from "./happttraveler";
 import ContactUs from "./Contact";
-
+import Link from "next/link";
+import Image from "next/image";
 function Nothern() {
   return (
     <>
@@ -15,8 +16,9 @@ function Nothern() {
         <div className="relative h-[360px] w-full overflow-hidden sm:h-[400px] md:h-[460px] lg:h-[420px]">
           
           {/* Background Image */}
-          <img
+          <Image
             src="/img.jpg"
+            fill
             alt="Aerial view of turquoise ocean and beach"
             className="h-full w-full object-cover object-center"
           />
@@ -90,12 +92,14 @@ function Nothern() {
             </p>
 
             {/* Button */}
-            <button
+          <Link
+href="/Contact"
               type="button"
               className="rounded-md border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Let&apos;s Get Started &raquo;
-            </button>
+        
+          </Link>
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import React from "react";
 import Navbarnew from "./navbarnew";
 import ContactUs from "./Contact";
 import Footer from "./footer";
-
+import Link from "next/link";
 export default function Contactpage() {
   return (
     <>
@@ -94,12 +94,14 @@ export default function Contactpage() {
             </p>
 
             {/* Button */}
-            <button
+          <Link 
+          href="/Contact"
               type="button"
               className="rounded-md border border-white/70 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10"
             >
               Let&apos;s Get Started &raquo;
-            </button>
+            
+          </Link>
           </div>
         </div>
       </section>

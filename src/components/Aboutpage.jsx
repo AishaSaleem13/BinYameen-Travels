@@ -4,6 +4,7 @@ import Image from "next/image";
 import Navbarnew from "./navbarnew";
 import layout from "./layout";
 import Hero from "./about2";
+import Link from "next/link";
 export default function CraftedEscapesHero() {
   return (
     <>
@@ -65,12 +66,14 @@ export default function CraftedEscapesHero() {
       </p>
 
       {/* Button */}
-      <button
+     <Link
+     href="/Contact"
         type="button"
         className="rounded-md border border-white/70 px-3 py-2 text-xs font-medium text-white transition hover:bg-white/10 sm:px-5 sm:text-sm"
       >
         Let&apos;s Get Started &raquo;
-      </button>
+     
+     </Link>
     </div>
 
   </div>
