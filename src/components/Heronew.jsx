@@ -24,7 +24,7 @@ function Heronew() {
             loop
             playsInline
             preload="auto"
-            poster="/heroimagec.png"
+            poster="/heroimagec.webp"
             className="
               absolute inset-0
               h-full w-full
