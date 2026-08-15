@@ -23,7 +23,7 @@ function Heronew() {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster="/heroimagec.webp"
             className="
               absolute inset-0
