@@ -23,18 +23,17 @@ function Heronew() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
+            poster="/heroimagec.png"
             className="
               absolute inset-0
               h-full w-full
               object-cover
               object-center
 
-              /* Mobile */
               max-sm:scale-[1.18]
               max-sm:object-[50%_50%]
 
-              /* Small phones */
               sm:scale-100
               sm:object-center
             "
