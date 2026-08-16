@@ -256,7 +256,7 @@ const countries = [
     image: "/japan.jpg",
     places: [
       { id: "japan-fuji", name: "Mount Fuji", image: "/MountFuji.jpeg", blurb: "Japan's iconic peak, best seen from Lake Kawaguchi." },
-      { id: "japan-kyoto", name: "Kyoto Temples", image: "/KyotoeTemple.jpeg", blurb: "Fushimi Inari's torii gates and old geisha streets." },
+      { id: "japan-kyoto", name: "Kyoto Temples", image: "/KyotoTemple.jpeg", blurb: "Fushimi Inari's torii gates and old geisha streets." },
       { id: "japan-tokyo", name: "Tokyo", image: "/Tokyo.jpeg", blurb: "Neon crossings, Shibuya, and Asakusa's ancient temple." },
     ],
   },
