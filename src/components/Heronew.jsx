@@ -146,7 +146,8 @@ function Heronew() {
               sm:gap-4
             "
           >
-            <Link href="/BookingForm" className="w-full sm:w-auto">
+            <Link href="/BookingForm" className="w-full sm:w-auto"
+            prefetch={false}>
               <button
                 className="
                   w-full
@@ -171,6 +172,7 @@ function Heronew() {
 
             <Link
               href="/Northtour"
+              prefetch={false}
               className="
                 w-full
                 rounded-md
