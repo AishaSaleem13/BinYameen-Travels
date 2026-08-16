@@ -1,6 +1,6 @@
-"use client";
 
-import { useState } from "react";
+
+// import { useState } from "react";
 import ContactUs from "./Contact";
 import Footer from "./footer";
 import Image from "next/image";
@@ -23,7 +23,7 @@ const stats = [
 ];
 
 export default function Hero() {
-  const [hovered, setHovered] = useState(null);
+  // const [hovered, setHovered] = useState(null);
 
   return (
     <section className="relative w-full overflow-hidden bg-gray-50 text-[#1C2A22]">
@@ -33,9 +33,9 @@ export default function Hero() {
       ===================================================== */}
 
       <section className="relative w-full overflow-hidden">
-        {/* Fonts */}
-        <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+ 
+        {/* <style>{`
+          // @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
           .font-display {
             font-family: 'Fraunces', serif;
@@ -49,7 +49,7 @@ export default function Hero() {
           .font-mono {
             font-family: 'JetBrains Mono', monospace;
           }
-        `}</style>
+        `}</style> */}
 
         {/* Background */}
         <div
@@ -111,7 +111,7 @@ export default function Hero() {
             {/* Heading */}
             <h1
               className="
-                font-display
+                font-voice
                 text-[13vw]
                 font-semibold
                 leading-[0.96]
@@ -179,8 +179,8 @@ export default function Hero() {
 
             {/* Main image */}
             <figure
-              onMouseEnter={() => setHovered("a")}
-              onMouseLeave={() => setHovered(null)}
+              // onMouseEnter={() => setHovered("a")}
+              // onMouseLeave={() => setHovered(null)}
               className="
                 relative
                 col-span-2
@@ -201,15 +201,15 @@ export default function Hero() {
                   object-top
                   transition-transform
                   duration-700
-                  ${hovered === "a" ? "scale-105" : "scale-100"}
+              
                 `}
               />
             </figure>
 
             {/* Secondary image */}
             <figure
-              onMouseEnter={() => setHovered("b")}
-              onMouseLeave={() => setHovered(null)}
+              // onMouseEnter={() => setHovered("b")}
+              // onMouseLeave={() => setHovered(null)}
               className="
                 relative
                 col-span-1
@@ -229,7 +229,7 @@ export default function Hero() {
                   object-cover
                   transition-transform
                   duration-700
-                  ${hovered === "b" ? "scale-105" : "scale-100"}
+                  // 
                 `}
               />
             </figure>
@@ -291,7 +291,7 @@ export default function Hero() {
                   flex
                   items-start
                   gap-2
-                  font-display
+                  font-voice
                   text-4xl
                   font-bold
                   leading-none
@@ -431,7 +431,7 @@ export default function Hero() {
                     border-l-2
                     border-[#A8402A]
                     pl-3
-                    font-display
+                    font-voice
                     text-base
                     font-medium
                     italic

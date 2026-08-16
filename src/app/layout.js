@@ -1,4 +1,9 @@
-import { Geist, Geist_Mono, Playfair_Display, Inter } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Playfair_Display,
+  Inter,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -25,7 +30,8 @@ const inter = Inter({
 
 export const metadata = {
   title: "Bin Yameen Travels",
-  description: "Experience the best Umrah and northern Pakistan tours with Bin Yameen Travels.",
+  description:
+    "Experience the best Umrah and northern Pakistan tours with Bin Yameen Travels.",
 };
 
 export default function RootLayout({ children }) {
@@ -34,7 +40,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }
