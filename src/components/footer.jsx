@@ -88,7 +88,7 @@ export default function Footer() {
               />
 
               <span className="text-xl font-semibold tracking-wide">
-                Bin Yameen
+                Bin Yameen Travels
               </span>
             </Link>
 

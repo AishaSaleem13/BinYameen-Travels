@@ -65,7 +65,7 @@ function About() {
                 md:text-[15px]
               "
             >
-              At Binyameen travels, we believe in returning from a trip
+              At Bin Yameen Travels, we believe in returning from a trip
               with memories, not just souvenirs. We love every single part
               of curating ultra-customized travel experiences for our
               clients, and are deeply invested in their satisfaction and

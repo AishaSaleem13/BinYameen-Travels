@@ -36,25 +36,28 @@ function Navbarnew({ variant = "dark" }) {
     >
       {/* ================= LOGO ================= */}
 
-      <div className="navbar-start">
-        <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Image
-            src={isDark ? "/t.png" : "/logoblack.png"}
-            alt="Bin Yameen Travel logo"
-            width={48}
-            height={48}
-            className="h-10 w-auto object-contain lg:h-12"
-            priority
-          />
+<div className="navbar-start min-w-0 lg:w-[250px] lg:flex-none">
+  <Link
+    href="/"
+    prefetch={false}
+    className="flex items-center gap-1.5 whitespace-nowrap lg:gap-2"
+  >
+    <Image
+      src={isDark ? "/t.png" : "/logoblack.png"}
+      alt="Bin Yameen Travels logo"
+      width={48}
+      height={48}
+      className="h-8 w-auto shrink-0 object-contain lg:h-12"
+      priority
+    />
 
-          <span
-            className={`text-lg font-semibold tracking-wide lg:text-xl ${textColor}`}
-          >
-            Bin Yameen
-          </span>
-        </Link>
-      </div>
-
+    <span
+      className={`whitespace-nowrap font-serif text-sm font-medium tracking-wide lg:text-xl ${textColor}`}
+    >
+      Bin Yameen Travels
+    </span>
+  </Link>
+</div>
       {/* ================= DESKTOP NAVIGATION ================= */}
 
       <div className="navbar-center hidden lg:flex">

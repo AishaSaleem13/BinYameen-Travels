@@ -35,7 +35,7 @@ function StatsBento() {
           <div className="mb-3 flex items-center gap-2">
             <span className="h-[2px] w-8 bg-[#800E13]" />
             <span className="text-xs font-semibold tracking-wider text-[#800E13]">
-              SINCE 2022
+              SINCE 2024
             </span>
           </div>
           <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl">
@@ -91,7 +91,7 @@ function StatsBento() {
         {/* Stat: 15+ years expertise */}
         <StatCard
           icon={Trophy}
-          value="5+"
+          value="2+"
           label="With years of expertise, we deliver exceptional travel experiences tailored to your unique needs."
           tone="bg-amber-50 text-amber-900"
           ring="text-amber-500"
@@ -100,7 +100,7 @@ function StatsBento() {
         {/* Stat: 12k tailored journeys */}
         <StatCard
           icon={Leaf}
-          value="2k"
+          value="1k"
           label="Tailored journeys, seamless success"
           tone="bg-emerald-50 text-emerald-900"
           ring="text-emerald-500"

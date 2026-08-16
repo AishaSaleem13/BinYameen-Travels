@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ContactUs from "./Contact";
 import Footer from "./footer";
-
+import Image from "next/image";
 const stats = [
   {
     label: "TXN VOLUME",
@@ -128,7 +128,7 @@ export default function Hero() {
               <span className="font-normal italic text-[#4B5F45]">
                 a better
               </span>{" "}
-              way
+              
               <br />
 
               way to travel
@@ -190,9 +190,10 @@ export default function Hero() {
                 shadow-[0_18px_40px_-20px_rgba(28,42,34,0.4)]
               "
             >
-              <img
+              <Image
                 src="/Team.jpg"
                 alt="Bin Yameen Travels team"
+                fill
                 className={`
                   h-full
                   w-full
@@ -218,9 +219,10 @@ export default function Hero() {
                 shadow-[0_18px_40px_-20px_rgba(28,42,34,0.4)]
               "
             >
-              <img
+              <Image
                 src="/Team2.jpg"
                 alt="Bin Yameen Travels advisor"
+                fill
                 className={`
                   h-full
                   w-full
@@ -334,7 +336,7 @@ export default function Hero() {
                   md:text-lg
                 "
               >
-                Our founder, Muhammad Yameen, started Bin Yameen Travel with
+                Our founder, Muhammad Yameen, started Bin Yameen Travels with
                 a simple vision: to make travel easier, more personal, and
                 hassle-free.
               </p>
@@ -349,13 +351,13 @@ export default function Hero() {
                   sm:leading-relaxed
                 "
               >
-                Founded in March 2024, Bin Yameen Travel began with a
+                Founded in March 2024, Bin Yameen Travels began with a
                 commitment to serving both pilgrims and travelers with
-                thoughtful planning and dependable support. Yameen wanted to
+                thoughtful planning and dependable support. Muhammad Yameen wanted to
                 create a travel experience where people could feel confident
                 knowing that the details of their journey were being handled
                 with care. From personalized itineraries to carefully
-                considered travel arrangements, Bin Yameen Travel was built
+                considered travel arrangements, Bin Yameen Travels was built
                 around understanding what each traveler actually needs.
               </p>
 
@@ -370,7 +372,7 @@ export default function Hero() {
                 "
               >
                 Today, that vision continues to shape the way Bin Yameen
-                Travel approaches every journey. Rather than offering the
+                Travels approaches every journey. Rather than offering the
                 same experience to everyone, the focus remains on creating
                 bespoke journeys tailored to each person&apos;s requirements,
                 lifestyle, and pace. Every detail is handled with care and
@@ -390,8 +392,9 @@ export default function Hero() {
                 <div className="flex items-center gap-3">
 
                   <img
-                    src="/mike-simorangkir.jpg"
+                    src="/Yameen.jpeg"
                     alt="Muhammad Yameen"
+                    
                     className="
                       h-9
                       w-9

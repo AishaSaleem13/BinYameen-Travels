@@ -111,12 +111,11 @@ export default function ContactUs() {
 
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-gray-900 sm:text-base">
-                    Head Office
+                     Office   Address:
                   </p>
 
                   <p className="mt-1 text-[12px] leading-5 text-gray-500 sm:text-sm sm:leading-6">
-                    Plot C, 22 Commercial Area, Sector Z DHA Phase 3,
-                    Lahore, 56000
+                 Shop No F1 Plot No CM-36 Shamsi Society, Near Airport, Karachi, Pakistan.
                   </p>
                 </div>
               </div>
@@ -195,21 +194,21 @@ export default function ContactUs() {
                       href="tel:+923422673475"
                       className="block transition-colors hover:text-[#800E13]"
                     >
-                      +92 342 2673475
+                           +92 335 2846251       
                     </a>
 
                     <a
                       href="tel:+923352846251"
                       className="block transition-colors hover:text-[#800E13]"
                     >
-                      +92 335 2846251
+                 +92 326 3569976  
                     </a>
 
                     <a
                       href="tel:+923263569976"
                       className="block transition-colors hover:text-[#800E13]"
                     >
-                      +92 326 3569976
+                        +92 342 2673475
                     </a>
                   </div>
                 </div>

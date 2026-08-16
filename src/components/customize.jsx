@@ -95,7 +95,7 @@ function Customize() {
 
             {/* Text */}
             <p className="mb-5 text-sm leading-relaxed text-slate-300">
-              Our BinYameen advisors are ready to plan the perfect trip for
+              Our Bin Yameen  advisors are ready to plan the perfect trip for
               you and/or your family.
             </p>
 

@@ -67,7 +67,7 @@ export default function UmrahPage() {
             {/* Right */}
             <div className="space-y-4">
               <p className="text-[13px] font-light leading-[1.8] text-[#6b5f54] sm:text-sm sm:leading-[1.85]">
-                At Bin Yameen Travel, we believe every Umrah journey deserves
+                At Bin Yameen Travels, we believe every Umrah journey deserves
                 the same care as the intention behind it. From your first
                 steps into ihram to the final farewell at the Haram, we handle
                 the details so you can stay present in the moment.

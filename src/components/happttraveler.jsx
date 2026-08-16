@@ -3,7 +3,7 @@ import { Quote, Star } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "BinYameen made our trip absolutely perfect! Everything was well-planned and the support team was amazing.",
+      "Bin Yameen Travels made our trip absolutely perfect! Everything was well-planned and the support team was amazing.",
     name: "Sana javed",
     location: "Karachi,Pakistan",
     rating: 5.0,
@@ -11,7 +11,7 @@ const testimonials = [
   },
   {
     quote:
-      "The guide was super knowledgeable and the itinerary was just perfect. Can't wait to book my next trip with BinYameen!",
+      "The guide was super knowledgeable and the itinerary was just perfect. Can't wait to book my next trip with Bin Yameen Travels!",
     name: "Muneeb akhtar",
     location: "Karachi,Pakistan",
     rating: 5.0,

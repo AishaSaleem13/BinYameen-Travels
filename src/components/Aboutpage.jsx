@@ -61,7 +61,7 @@ export default function CraftedEscapesHero() {
 
       {/* Card Text */}
       <p className="mb-4 text-xs leading-relaxed text-slate-300 sm:mb-5 sm:text-sm">
-        Our BinYameen advisors are ready to plan the perfect trip for
+        Our Bin Yameen  Travels advisors are ready to plan the perfect trip for
         you and/or your family.
       </p>
 

@@ -87,7 +87,7 @@ function Nothern() {
 
             {/* Text */}
             <p className="mb-5 text-sm leading-relaxed text-slate-300">
-              Our BinYameen advisors are ready to plan the perfect trip for
+              Our BinYameen  Travels advisors are ready to plan the perfect trip for
               you and/or your family.
             </p>
 
