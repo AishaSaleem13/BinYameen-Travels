@@ -1,5 +1,4 @@
 "use client";
-
 import { Globe, Backpack, Map, Flower2 } from "lucide-react";
 
 const flags = [

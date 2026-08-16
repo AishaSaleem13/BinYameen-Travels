@@ -78,7 +78,7 @@ export default function CustomizeForm({
 
     Destination: "",
 
-    TravelMonth: "",
+    TravelMonth: "2026-",
 
     NoOfPersons: "",
 

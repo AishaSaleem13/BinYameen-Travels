@@ -176,6 +176,8 @@ function Navbarnew({ variant = "dark" }) {
           <div
             tabIndex={0}
             role="button"
+              aria-label="Open navigation menu"
+                aria-haspopup="menu"
             className={`btn btn-ghost ${textColor}`}
           >
             <svg
