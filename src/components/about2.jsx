@@ -177,7 +177,7 @@ export default function Hero() {
             "
           >
 
-            {/* Main image */}
+   
             <figure
               // onMouseEnter={() => setHovered("a")}
               // onMouseLeave={() => setHovered(null)}

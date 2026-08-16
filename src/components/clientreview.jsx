@@ -10,28 +10,28 @@ import {
 
 const testimonials = [
   {
-    name: "Mr. Muhammad Osama Ashqeen",
+    name: " Mr. Sikandar Ashrafi ",
     location: "Karachi, Pakistan",
     poster:
     "/poster.jpg",
     video: "/videoreview.mp4",
   },
   {
-    name: "Muhammad Fareed Shaikh",
+    name: " Mr. Ali Uddin Qureshi ",
     location: "Karachi, Pakistan",
     poster:
       "/poster.jpg",
     video:"/videoc5.mp4",
   },
   {
-    name: "Mr. Muhammad Asad",
+    name: " Mr. Nouman Hashm",
     location: "Karachi, Pakistan",
     poster:
     "/poster.jpg",
     video:"/video6.mp4",
   },
   {
-    name: "Mr. Muhammad Manzoor Ahmed",
+    name: "Mr. Fareed",
     location: "Karachi, Pakistan",
     poster:
           "/poster.jpg",
