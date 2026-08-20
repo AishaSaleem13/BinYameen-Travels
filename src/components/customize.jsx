@@ -7,7 +7,7 @@ import ContactUs from "./Contact";
 import Footer from "./footer";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-
+import Image from "next/image";
 function Customize() {
   const searchparams = useSearchParams();
   const tripType = searchparams.get("TripType");
@@ -21,8 +21,11 @@ function Customize() {
         <div className="relative h-[360px] w-full overflow-hidden sm:h-[400px] md:h-[460px] lg:h-[420px]">
 
           {/* Background Image */}
-          <img
+          <Image
             src="/img.webp"
+            fill
+            
+             priority
             alt="Aerial view of turquoise ocean and beach"
             className="absolute inset-0 h-full w-full object-cover"
           />

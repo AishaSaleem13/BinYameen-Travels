@@ -6,6 +6,7 @@ import Footer from "./footer";
 import ContactUs from "./Contact";
 import BookingWidget from "./formbooking";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 function Bookingpage() {
   const searchParams = useSearchParams();
@@ -26,7 +27,7 @@ function Bookingpage() {
       <section className="relative">
         <div className="relative h-[420px] w-full overflow-hidden md:h-[460px]">
 
-          <img
+          <Image
             src="/img.webp"
             alt="Travel"
             className="h-full w-full object-cover"

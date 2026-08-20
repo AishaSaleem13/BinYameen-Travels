@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import React from "react";
-
+import Image from "next/image";
 function About() {
   return (
     <section className="w-full bg-white">
@@ -147,9 +147,12 @@ function About() {
                 "
               >
 
-                <img
+                <Image
                   src="/img.webp"
                   alt="Travel destination"
+
+fill
+
                   className="
                     h-full
                     w-full

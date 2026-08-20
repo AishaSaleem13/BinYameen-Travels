@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Bookingapi } from "../../environment";
-
+import Image from "next/image";
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     FullName: "",
@@ -191,21 +191,21 @@ export default function ContactUs() {
 
                   <div className="mt-1 space-y-1 text-[12px] text-gray-500 sm:text-sm">
                     <a
-                      href="tel:+923422673475"
+                      href="tel:+92 335 2846251  "
                       className="block transition-colors hover:text-[#800E13]"
                     >
                            +92 335 2846251       
                     </a>
 
                     <a
-                      href="tel:+923352846251"
+                      href="tel:+92 326 3569976  "
                       className="block transition-colors hover:text-[#800E13]"
                     >
                  +92 326 3569976  
                     </a>
 
                     <a
-                      href="tel:+923263569976"
+                      href="tel:+92 342 2673475"
                       className="block transition-colors hover:text-[#800E13]"
                     >
                         +92 342 2673475
@@ -220,8 +220,10 @@ export default function ContactUs() {
           {/* MIDDLE — IMAGE */}
           <div className="relative h-[260px] sm:h-[340px] md:h-[400px] lg:h-auto lg:min-h-0">
 
-            <img
+            <Image
               src="/contactimage.jpg"
+              fill
+               sizes="100vw"
               alt="Beautiful travel destination"
               className="absolute inset-0 h-full w-full object-cover"
             />
