@@ -19,6 +19,7 @@ function Nothern() {
           <Image
             src="/img.webp"
             fill
+            sizes="100vw"
             alt="Aerial view of turquoise ocean and beach"
             className="h-full w-full object-cover object-center"
           />

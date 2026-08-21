@@ -152,6 +152,7 @@ function About() {
                   alt="Travel destination"
 
 fill
+  sizes="(max-width: 768px) 50vw, 448px"
 
                   className="
                     h-full
