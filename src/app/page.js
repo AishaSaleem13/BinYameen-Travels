@@ -1,8 +1,6 @@
 
 // import Navbar from "@/components/Navbar";
 
-import AboutUs from "@/components/Aboutpage";
-import OurStory from "@/components/Aboutpage";
 import ContactUs from "@/components/Contact";
 import Heronew from "@/components/Heronew";
 import UmrahIntroSection from "@/components/Umrah";
@@ -12,10 +10,7 @@ import ValuedPilgrims from "@/components/clientreview";
 import FooterSection from "@/components/footer";
 import BookingWidget from "@/components/formbooking"
 import ServicesFeatures from "@/components/googlereviews";
-import GoogleReviews from "@/components/googlereviews";
 
-import HeroSlider from "@/components/hero1";
-import InternationalPage from "@/components/international";
 import CuratedActivities from "@/components/preview2";
 import WhyChooseUs from "@/components/whychooseus";
 
