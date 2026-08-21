@@ -38,7 +38,7 @@ function Heronew() {
               sm:object-center
             "
           >
-            <source src="/Compressedvideo.mp4" type="video/mp4" />
+            <source src="/c2.mp4" type="video/mp4" />
           </video>
 
           {/* Dark overlay */}
