@@ -65,7 +65,7 @@ function Navbarnew({ variant = "dark" }) {
           className={`menu menu-horizontal gap-2 px-1 ${textColor}`}
         >
           <li>
-            <Link href="/" prefetch={false} className={hoverColor}>
+            <Link href="/" className={hoverColor}>
               Home
             </Link>
           </li>
@@ -203,7 +203,7 @@ function Navbarnew({ variant = "dark" }) {
             className="menu menu-sm dropdown-content z-50 mt-3 w-64 rounded-box bg-white p-3 text-black shadow-xl"
           >
             <li>
-              <Link href="/" prefetch={false}>
+              <Link href="/" >
                 Home
               </Link>
             </li>
