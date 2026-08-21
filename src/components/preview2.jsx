@@ -8,23 +8,23 @@ const activities = [
     title: "Umrah Packages",
     href: "/umrahpackages",
     image:
-      "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?q=80&w=800&auto=format&fit=crop",
+      "/umrah.webp",
   },
   {
     title: "International Tour",
     href: "/internationalpage",
     image:
-      "https://images.unsplash.com/photo-1500835556837-99ac94a94552?q=80&w=800&auto=format&fit=crop",
+      "/international.webp",
   },
   {
     title: "Northern Tour",
     href: "/Northtour",
     image:
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop",
+      "/northern.webp",
   },
 ];
 
-export default function CuratedActivities() {
+  export default function CuratedActivities() {
   return (
     <section className="w-full bg-white px-3 py-10 sm:px-6 sm:py-14 md:px-12 lg:px-20">
       <div className="mx-auto max-w-7xl">
