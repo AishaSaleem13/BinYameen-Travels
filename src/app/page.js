@@ -1,30 +1,38 @@
-import dynamic from "next/dynamic";
+
+// import Navbar from "@/components/Navbar";
+
+import ContactUs from "@/components/Contact";
 import Heronew from "@/components/Heronew";
-import BookingWidget from "@/components/formbooking";
+import UmrahIntroSection from "@/components/Umrah";
 import About from "@/components/about";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import Hero from "@/components/about2";
+import ValuedPilgrims from "@/components/clientreview";
+import FooterSection from "@/components/footer";
+import BookingWidget from "@/components/formbooking"
+import ServicesFeatures from "@/components/googlereviews";
 
-// Below-the-fold sections: don't block initial hydration
-const CuratedActivities = dynamic(() => import("@/components/preview2"));
-const WhyChooseUs = dynamic(() => import("@/components/whychooseus"));
-const ServicesFeatures = dynamic(() => import("@/components/googlereviews"));
-const ValuedPilgrims = dynamic(() => import("@/components/clientreview"));
-const ContactUs = dynamic(() => import("@/components/Contact"));
-const FooterSection = dynamic(() => import("@/components/footer"));
-
+import CuratedActivities from "@/components/preview2";
+import WhyChooseUs from "@/components/whychooseus";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function Home() {
   return (
-    <div className="bg-white">
-      <Heronew />
-      <BookingWidget />
-      <About />
-      <CuratedActivities />
-      <WhyChooseUs />
-      <ServicesFeatures />
-      <ValuedPilgrims />
-      <ContactUs />
-      <FooterSection />
-      <SpeedInsights />
-    </div>
+  <>
+  
+     <div className="bg-white">
+       <Heronew/>
+  <BookingWidget/>
+  <About/>
+  <CuratedActivities/>
+<WhyChooseUs/>
+<ServicesFeatures/>
+<ValuedPilgrims/>
+<ContactUs/>
+<FooterSection/>
+
+     </div>
+    
+{/* <HeroSlider/> */}
+ 
+  </>
   );
 }
