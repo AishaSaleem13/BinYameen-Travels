@@ -14,21 +14,21 @@ const testimonials = [
     location: "Karachi, Pakistan",
     poster:
     "/poster.jpg",
-    video: "/videoreview.mp4",
+    video: "/Videoreview1.mp4",
   },
   {
     name: " Mr. Ali Uddin Qureshi ",
     location: "Karachi, Pakistan",
     poster:
       "/poster.jpg",
-    video:"/videoc5.mp4",
+    video:"/5.mp4",
   },
   {
     name: " Mr. Nouman Hashm",
     location: "Karachi, Pakistan",
     poster:
     "/poster.jpg",
-    video:"/video6.mp4",
+    video:"/6.mp4",
   },
   {
     name: "Mr. Fareed",
