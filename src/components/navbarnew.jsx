@@ -43,7 +43,7 @@ function Navbarnew({ variant = "dark" }) {
     className="flex items-center gap-1.5 whitespace-nowrap lg:gap-2"
   >
     <Image
-      src={isDark ? "/t.png" : "/logoblack.png"}
+      src={isDark ? "/t.png" : "/icon.png"}
       alt="logo"
       width={48}
       height={48}
