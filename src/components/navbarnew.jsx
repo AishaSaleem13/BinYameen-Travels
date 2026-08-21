@@ -44,7 +44,7 @@ function Navbarnew({ variant = "dark" }) {
   >
     <Image
       src={isDark ? "/t.png" : "/logoblack.png"}
-      alt="Bin Yameen Travels logo"
+      alt="logo"
       width={48}
       height={48}
       className="h-8 w-auto shrink-0 object-contain lg:h-12"
