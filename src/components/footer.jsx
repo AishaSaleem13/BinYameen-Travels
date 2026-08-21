@@ -80,7 +80,7 @@ export default function Footer() {
               className="mb-5 flex items-center gap-3"
             >
               <img
-                src="/t.png"
+                src="/tt.webp"
                 alt="Bin Yameen Travel"
                 width={52}
                 height={52}

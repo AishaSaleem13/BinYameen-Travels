@@ -3,6 +3,7 @@ import Navbarnew from "./navbarnew";
 import ContactUs from "./Contact";
 import Footer from "./footer";
 import Link from "next/link";
+import Image from "next/image";
 export default function Contactpage() {
   return (
     <>
@@ -13,8 +14,11 @@ export default function Contactpage() {
         <div className="relative h-[360px] w-full overflow-hidden sm:h-[400px] md:h-[460px] lg:h-[420px]">
           
           {/* Background Image */}
-          <img
-            src="/img.jpg"
+          <Image
+            src="/img.webp"
+            fill
+             priority
+    sizes="100vw"
             alt="Aerial view of turquoise ocean and beach"
             className="absolute inset-0 h-full w-full object-cover"
           />

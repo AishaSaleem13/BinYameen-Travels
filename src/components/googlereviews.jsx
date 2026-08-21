@@ -52,13 +52,16 @@ export default function ServicesFeatures() {
 
           <div className="flex w-max animate-flag-marquee items-center gap-16 group-hover:[animation-play-state:paused]">
             {marqueeFlags.map((flag, index) => (
-              <img
-                key={`${flag.code}-${index}`}
-                src={`https://flagcdn.com/w80/${flag.code}.png`}
-                alt={flag.label}
-                title={flag.label}
-                className="h-8 w-auto shrink-0 rounded-sm shadow-sm"
-              />
+          <img
+  key={`${flag.code}-${index}`}
+  src={`https://flagcdn.com/w80/${flag.code}.png`}
+  alt={flag.label}
+  title={flag.label}
+  width={43}
+  height={32}
+  loading="lazy"
+  className="h-8 w-auto shrink-0 rounded-sm shadow-sm"
+/>
             ))}
           </div>
         </div>
