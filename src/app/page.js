@@ -13,7 +13,7 @@ import ServicesFeatures from "@/components/googlereviews";
 
 import CuratedActivities from "@/components/preview2";
 import WhyChooseUs from "@/components/whychooseus";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export default function Home() {
   return (
   <>
