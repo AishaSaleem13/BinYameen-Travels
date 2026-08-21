@@ -1,2 +1,0 @@
-export const Bookingapi=process.env.NEXT_PUBLIC_API_URL
-export const Customizeapi=process.env.NEXT_PUBLIC_API_URL2
