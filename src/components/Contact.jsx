@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Bookingapi } from "../../environment";
 import Image from "next/image";
+
 export default function ContactUs() {
   const [formData, setFormData] = useState({
     FullName: "",
@@ -13,6 +14,7 @@ export default function ContactUs() {
 
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,6 +23,12 @@ export default function ContactUs() {
       ...prev,
       [name]: value,
     }));
+
+    // Remove old status when user starts editing again
+    if (status) {
+      setStatus("");
+      setSuccess(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -28,6 +36,7 @@ export default function ContactUs() {
 
     setLoading(true);
     setStatus("");
+    setSuccess(false);
 
     try {
       const response = await fetch(Bookingapi, {
@@ -44,7 +53,12 @@ export default function ContactUs() {
         throw new Error(data.message || "Something went wrong");
       }
 
-      setStatus("Message sent successfully!");
+      console.log("Contact enquiry submitted:", data);
+
+      setSuccess(true);
+      setStatus(
+        "Message sent successfully! We’ll contact you shortly."
+      );
 
       setFormData({
         FullName: "",
@@ -54,7 +68,11 @@ export default function ContactUs() {
       });
     } catch (error) {
       console.error("Contact form error:", error);
-      setStatus("Failed to send message. Please try again.");
+
+      setSuccess(false);
+      setStatus(
+        "Failed to send message. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -89,7 +107,7 @@ export default function ContactUs() {
             {/* CONTACT DETAILS */}
             <div className="mt-6 space-y-5 border-t border-gray-100 pt-6 sm:mt-7 sm:space-y-6 sm:pt-7">
 
-              {/* HEAD OFFICE */}
+              {/* OFFICE ADDRESS */}
               <div className="flex items-start gap-3 sm:gap-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#800E13]/10 text-[#800E13] sm:h-11 sm:w-11">
                   <svg
@@ -111,11 +129,12 @@ export default function ContactUs() {
 
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-gray-900 sm:text-base">
-                     Office   Address:
+                    Office Address:
                   </p>
 
                   <p className="mt-1 text-[12px] leading-5 text-gray-500 sm:text-sm sm:leading-6">
-                 Shop No F1 Plot No CM-36 Shamsi Society, Near Airport, Karachi, Pakistan.
+                    Shop No F1 Plot No CM-36 Shamsi Society, Near Airport,
+                    Karachi, Pakistan.
                   </p>
                 </div>
               </div>
@@ -132,6 +151,7 @@ export default function ContactUs() {
                     className="h-4 w-4 sm:h-5 sm:w-5"
                   >
                     <rect x="3" y="5" width="18" height="14" rx="2" />
+
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -190,26 +210,28 @@ export default function ContactUs() {
                   </p>
 
                   <div className="mt-1 space-y-1 text-[12px] text-gray-500 sm:text-sm">
+
                     <a
-                      href="tel:+92 335 2846251  "
+                      href="tel:+923352846251"
                       className="block transition-colors hover:text-[#800E13]"
                     >
-                           +92 335 2846251       
+                      +92 335 2846251
                     </a>
 
                     <a
-                      href="tel:+92 326 3569976  "
+                      href="tel:+923263569976"
                       className="block transition-colors hover:text-[#800E13]"
                     >
-                 +92 326 3569976  
+                      +92 326 3569976
                     </a>
 
                     <a
-                      href="tel:+92 342 2673475"
+                      href="tel:+923422673475"
                       className="block transition-colors hover:text-[#800E13]"
                     >
-                        +92 342 2673475
+                      +92 342 2673475
                     </a>
+
                   </div>
                 </div>
               </div>
@@ -218,14 +240,14 @@ export default function ContactUs() {
           </div>
 
           {/* MIDDLE — IMAGE */}
-          <div className="relative h-[260px] sm:h-[340px] md:h-[400px] lg:h-auto lg:min-h-0">
+          <div className="relative h-[260px] sm:h-[340px] md:h-[400px] lg:h-auto">
 
             <Image
               src="/contactimage.jpg"
               fill
-               sizes="100vw"
+              sizes="(max-width: 1024px) 100vw, 33vw"
               alt="Beautiful travel destination"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="object-cover"
             />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -338,17 +360,17 @@ export default function ContactUs() {
                 />
               </div>
 
-              {/* STATUS */}
+              {/* SUCCESS / ERROR MESSAGE */}
               {status && (
-                <p
-                  className={`text-center text-sm font-medium ${
-                    status.includes("successfully")
-                      ? "text-green-600"
-                      : "text-red-600"
+                <div
+                  className={`rounded-lg px-3 py-2.5 text-center text-xs font-medium ${
+                    success
+                      ? "bg-green-50 text-green-600"
+                      : "bg-red-50 text-red-600"
                   }`}
                 >
                   {status}
-                </p>
+                </div>
               )}
 
               {/* BUTTON */}

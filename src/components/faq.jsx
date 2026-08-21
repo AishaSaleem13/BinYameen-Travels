@@ -77,7 +77,7 @@ export default function FaqSection() {
               "Still unsure about your journey?"
             </p>
             <a
-              href="/contact"
+              href="/Contact"
               className="relative mt-6 inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-[#E4C98A] border-b border-[#E4C98A] pb-1"
             >
               Talk to our team →

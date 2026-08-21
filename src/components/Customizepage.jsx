@@ -19,7 +19,6 @@ import {
 
 import { Customizeapi } from "../../environment";
 
-
 const Field = ({ label, icon: Icon, children }) => (
   <div
     className="
@@ -27,8 +26,7 @@ const Field = ({ label, icon: Icon, children }) => (
       rounded-lg
       border border-gray-200
       bg-white
-      px-3
-      py-2
+      px-3 py-2
       transition-all duration-200
       hover:border-gray-300
       focus-within:border-[#800E13]/50
@@ -51,48 +49,26 @@ export default function CustomizeForm({
   PackageId = "",
   PackageName = "",
 }) {
-  /*
-  ============================================================
-  TRIP TYPE
-  ============================================================
-
-  If Customize is opened from an Umrah package:
-  TripType = "Umrah"
-
-  If opened from Navbar:
-  TripType = ""
-
-  Therefore:
-  - Umrah package => NO journey type selector
-  - Navbar => journey type selector appears
-  */
-
   const [tripType, setTripType] = useState(initialTripType);
 
   const [formData, setFormData] = useState({
     FullName: "",
     Email: "",
     PhoneNumber: "",
-
     TripType: initialTripType || "",
-
     Destination: "",
-
-    TravelMonth: "2026-",
-
+    TravelMonth: "",
     NoOfPersons: "",
-
     NoOfNights: "",
     NumberOfDays: "",
-
     HotelCategory: "",
     Sharing: "",
     Transportation: "",
-
     Message: "",
   });
 
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const inputClasses =
     "w-full bg-transparent text-[12px] text-gray-700 outline-none placeholder:text-gray-400";
@@ -102,6 +78,10 @@ export default function CustomizeForm({
       ...prev,
       [key]: e.target.value,
     }));
+
+    if (success) {
+      setSuccess(false);
+    }
   };
 
   const handleTripType = (value) => {
@@ -110,8 +90,6 @@ export default function CustomizeForm({
     setFormData((prev) => ({
       ...prev,
       TripType: value,
-
-      // Clear fields that don't belong to the new trip type
       Destination: "",
       NoOfNights: "",
       NumberOfDays: "",
@@ -119,20 +97,23 @@ export default function CustomizeForm({
       Sharing: "",
       Transportation: "",
     }));
+
+    setSuccess(false);
   };
 
   const handleSubmit = async () => {
     if (!formData.FullName || !formData.PhoneNumber || !formData.Email) {
-      alert("Please fill in your basic details.");
+      setSuccess(false);
       return;
     }
 
     if (!tripType) {
-      alert("Please select your journey type.");
+      setSuccess(false);
       return;
     }
 
     setLoading(true);
+    setSuccess(false);
 
     try {
       console.log("Customize Trip Data:", formData);
@@ -156,9 +137,7 @@ export default function CustomizeForm({
 
       console.log("Customize enquiry submitted:", data);
 
-      alert(
-        "Your customization request has been submitted successfully!"
-      );
+      setSuccess(true);
 
       setFormData({
         FullName: "",
@@ -175,14 +154,12 @@ export default function CustomizeForm({
         Transportation: "",
         Message: "",
       });
-     
 
+      if (!initialTripType) {
+        setTripType("");
+      }
     } catch (error) {
       console.error("Customize error:", error);
-
-      alert(
-        "Failed to submit customization request. Please try again."
-      );
     } finally {
       setLoading(false);
     }
@@ -196,12 +173,9 @@ export default function CustomizeForm({
     <section className="w-full bg-[#faf9f8] px-4 py-10 sm:px-6 sm:py-14">
       <div className="mx-auto max-w-5xl">
 
-        {/* ==================================================
-            HEADING
-        ================================================== */}
+        {/* HEADING */}
 
         <div className="mb-7 text-center">
-
           <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-[#800E13]">
             Customize Your Journey
           </p>
@@ -214,20 +188,15 @@ export default function CustomizeForm({
             Tell us what you would like to change and our travel
             advisors will create a journey around your preferences.
           </p>
-
         </div>
 
-
-        {/* ==================================================
-            MAIN CARD
-        ================================================== */}
+        {/* MAIN CARD */}
 
         <div className="mx-auto max-w-4xl rounded-2xl border border-gray-200 bg-white p-5 shadow-[0_8px_30px_rgba(0,0,0,0.05)] sm:p-6">
 
           {/* HEADER */}
 
           <div className="mb-5 flex items-center justify-between border-b border-gray-100 pb-4">
-
             <div className="flex items-center gap-2">
 
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#800E13]/5">
@@ -247,19 +216,14 @@ export default function CustomizeForm({
             </div>
 
             <ShieldCheck className="h-4 w-4 text-gray-300" />
-
           </div>
 
-
-          {/* ==================================================
-              SELECTED PACKAGE
-          ================================================== */}
+          {/* SELECTED PACKAGE */}
 
           {PackageName && (
             <div className="mb-4 flex items-center justify-between rounded-lg border border-[#800E13]/10 bg-[#800E13]/5 px-3 py-2.5">
 
               <div className="flex items-center gap-2">
-
                 <MapPin className="h-3.5 w-3.5 text-[#800E13]" />
 
                 <div>
@@ -271,31 +235,23 @@ export default function CustomizeForm({
                     {PackageName}
                   </p>
                 </div>
-
               </div>
 
               <span className="text-[9px] font-medium text-[#800E13]">
                 Customize
               </span>
-
             </div>
           )}
 
-
-          {/* ==================================================
-              JOURNEY TYPE
-              ONLY SHOWN WHEN COMING FROM NAVBAR
-          ================================================== */}
+          {/* JOURNEY TYPE */}
 
           {!initialTripType && (
             <div className="mb-4">
-
               <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-400">
                 Journey Type
               </p>
 
               <div className="grid grid-cols-3 gap-2">
-
                 {["Umrah", "Northern", "International"].map((type) => (
                   <button
                     key={type}
@@ -304,13 +260,11 @@ export default function CustomizeForm({
                     className={`
                       rounded-lg
                       border
-                      px-3
-                      py-2.5
+                      px-3 py-2.5
                       text-[10px]
                       font-semibold
                       transition-all
                       duration-200
-
                       ${
                         tripType === type
                           ? "border-[#800E13] bg-[#800E13] text-white"
@@ -321,16 +275,11 @@ export default function CustomizeForm({
                     {type}
                   </button>
                 ))}
-
               </div>
-
             </div>
           )}
 
-
-          {/* ==================================================
-              FORM
-          ================================================== */}
+          {/* FORM */}
 
           <div className="space-y-3">
 
@@ -360,7 +309,6 @@ export default function CustomizeForm({
 
             </div>
 
-
             <Field label="Email Address" icon={Mail}>
               <input
                 type="email"
@@ -370,7 +318,6 @@ export default function CustomizeForm({
                 className={inputClasses}
               />
             </Field>
-
 
             {/* PERSON + MONTH */}
 
@@ -398,21 +345,15 @@ export default function CustomizeForm({
 
             </div>
 
-
-            {/* ==================================================
-                UMRAH OPTIONS
-            ================================================== */}
+            {/* UMRAH OPTIONS */}
 
             {isUmrah && (
               <>
                 <div className="pt-2">
-
                   <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#800E13]">
                     Umrah Preferences
                   </p>
-
                 </div>
-
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
 
@@ -427,37 +368,21 @@ export default function CustomizeForm({
                     />
                   </Field>
 
-
                   <Field label="Hotel Category" icon={Hotel}>
                     <select
                       value={formData.HotelCategory}
                       onChange={updateField("HotelCategory")}
                       className={inputClasses}
                     >
-                      <option value="">
-                        Select hotel
-                      </option>
-
-                      <option value="3 Star">
-                        3 Star
-                      </option>
-
-                      <option value="4 Star">
-                        4 Star
-                      </option>
-
-                      <option value="5 Star">
-                        5 Star
-                      </option>
-
-                      <option value="6 Star">
-                        6 Star
-                      </option>
+                      <option value="">Select hotel</option>
+                      <option value="3 Star">3 Star</option>
+                      <option value="4 Star">4 Star</option>
+                      <option value="5 Star">5 Star</option>
+                      <option value="6 Star">6 Star</option>
                     </select>
                   </Field>
 
                 </div>
-
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
 
@@ -467,28 +392,13 @@ export default function CustomizeForm({
                       onChange={updateField("Sharing")}
                       className={inputClasses}
                     >
-                      <option value="">
-                        Select sharing
-                      </option>
-
-                      <option value="Quad Sharing">
-                        Quad Sharing
-                      </option>
-
-                      <option value="Triple Sharing">
-                        Triple Sharing
-                      </option>
-
-                      <option value="Double Sharing">
-                        Double Sharing
-                      </option>
-
-                      <option value="Private Room">
-                        Private Room
-                      </option>
+                      <option value="">Select sharing</option>
+                      <option value="Quad Sharing">Quad Sharing</option>
+                      <option value="Triple Sharing">Triple Sharing</option>
+                      <option value="Double Sharing">Double Sharing</option>
+                      <option value="Private Room">Private Room</option>
                     </select>
                   </Field>
-
 
                   <Field label="Transportation" icon={Car}>
                     <select
@@ -496,22 +406,14 @@ export default function CustomizeForm({
                       onChange={updateField("Transportation")}
                       className={inputClasses}
                     >
-                      <option value="">
-                        Select transport
-                      </option>
-
+                      <option value="">Select transport</option>
                       <option value="Shared Transport">
                         Shared Transport
                       </option>
-
-                      <option value="Private Car">
-                        Private Car
-                      </option>
-
+                      <option value="Private Car">Private Car</option>
                       <option value="VIP Private Car">
                         VIP Private Car
                       </option>
-
                       <option value="No Transportation">
                         No Transportation
                       </option>
@@ -522,21 +424,15 @@ export default function CustomizeForm({
               </>
             )}
 
-
-            {/* ==================================================
-                NORTHERN / INTERNATIONAL
-            ================================================== */}
+            {/* NORTHERN / INTERNATIONAL */}
 
             {(isNorthern || isInternational) && (
               <>
                 <div className="pt-2">
-
                   <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#800E13]">
                     Trip Preferences
                   </p>
-
                 </div>
-
 
                 <Field label="Destination" icon={MapPin}>
                   <input
@@ -552,7 +448,6 @@ export default function CustomizeForm({
                   />
                 </Field>
 
-
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
 
                   <Field label="Number of Nights" icon={Moon}>
@@ -565,7 +460,6 @@ export default function CustomizeForm({
                       className={inputClasses}
                     />
                   </Field>
-
 
                   <Field label="Number of Days" icon={CalendarDays}>
                     <input
@@ -580,34 +474,20 @@ export default function CustomizeForm({
 
                 </div>
 
-
                 <Field label="Hotel Category" icon={Hotel}>
                   <select
                     value={formData.HotelCategory}
                     onChange={updateField("HotelCategory")}
                     className={inputClasses}
                   >
-                    <option value="">
-                      Select hotel
-                    </option>
-
-                    <option value="3 Star">
-                      3 Star
-                    </option>
-
-                    <option value="4 Star">
-                      4 Star
-                    </option>
-
-                    <option value="5 Star">
-                      5 Star
-                    </option>
+                    <option value="">Select hotel</option>
+                    <option value="3 Star">3 Star</option>
+                    <option value="4 Star">4 Star</option>
+                    <option value="5 Star">5 Star</option>
                   </select>
                 </Field>
-
               </>
             )}
-
 
             {/* MESSAGE */}
 
@@ -623,10 +503,7 @@ export default function CustomizeForm({
 
           </div>
 
-
-          {/* ==================================================
-              SUBMIT
-          ================================================== */}
+          {/* SUBMIT */}
 
           <div className="mt-5 border-t border-gray-100 pt-4">
 
@@ -638,11 +515,10 @@ export default function CustomizeForm({
               </span>
             </div>
 
-
             <button
               type="button"
               onClick={handleSubmit}
-              disabled={loading}
+              disabled={loading || success}
               className="
                 flex
                 h-10
@@ -665,22 +541,41 @@ export default function CustomizeForm({
                 disabled:opacity-60
               "
             >
-
               {loading ? (
                 "Sending..."
+              ) : success ? (
+                "Enquiry Sent ✓"
               ) : (
                 <>
                   <Send className="h-3.5 w-3.5" />
                   Send Customization Request
                 </>
               )}
-
             </button>
+
+            {/* SUCCESS MESSAGE */}
+
+            {success && (
+              <p className="mt-4 text-center text-sm font-medium text-green-600">
+                Thank you! Your enquiry has been received. We’ll contact you shortly.
+              </p>
+            )}
+
+            {/* VALIDATION MESSAGE */}
+
+            {!formData.FullName &&
+              !formData.PhoneNumber &&
+              !formData.Email &&
+              !loading &&
+              !success && (
+                <p className="mt-2 text-center text-[9px] text-gray-400">
+                  Please fill in your name, WhatsApp number and email.
+                </p>
+              )}
 
           </div>
 
         </div>
-
       </div>
     </section>
   );

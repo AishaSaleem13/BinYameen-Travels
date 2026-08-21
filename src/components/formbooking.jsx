@@ -76,6 +76,7 @@ export default function BookingWidget({
   });
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
   /* ============================================================
      UPDATE FORM FIELD
@@ -94,6 +95,7 @@ export default function BookingWidget({
 
   const handleSubmit = async () => {
     setLoading(true);
+    setStatus("");
 
     try {
       console.log("Booking Data:", formData);
@@ -114,21 +116,20 @@ export default function BookingWidget({
 
       console.log("Booking submitted:", data);
 
-      alert("Your enquiry has been submitted successfully!");
+      setStatus("success");
 
       setFormData({
         FullName: "",
         PhoneNumber: "",
         Email: "",
         NoOfPerson: "",
-        Month: "2026-",
+        Month: "",
         Message: "",
         PackageId: PackageId || "",
       });
     } catch (error) {
       console.error("Booking error:", error);
-
-      alert("Failed to submit enquiry. Please try again.");
+      setStatus("error");
     } finally {
       setLoading(false);
     }
@@ -150,12 +151,9 @@ export default function BookingWidget({
       <section className="w-full bg-[#faf9f8] px-3 py-6 sm:px-6 sm:py-14">
         <div className="mx-auto max-w-5xl">
 
-          {/* ====================================================
-              PAGE HEADING
-          ==================================================== */}
+          {/* PAGE HEADING */}
 
           <div className="mb-4 text-center sm:mb-7">
-
             <p
               className="
                 mb-1.5
@@ -198,12 +196,9 @@ export default function BookingWidget({
               Tell us a little about your trip and our travel advisors
               will get back to you shortly.
             </p>
-
           </div>
 
-          {/* ====================================================
-              MAIN CONTENT
-          ==================================================== */}
+          {/* MAIN CONTENT */}
 
           <div
             className="
@@ -215,9 +210,7 @@ export default function BookingWidget({
             "
           >
 
-            {/* ==================================================
-                FORM CARD
-            ================================================== */}
+            {/* FORM CARD */}
 
             <div
               className="
@@ -232,9 +225,7 @@ export default function BookingWidget({
               "
             >
 
-              {/* =================================================
-                  FORM HEADER
-              ================================================= */}
+              {/* FORM HEADER */}
 
               <div
                 className="
@@ -249,9 +240,7 @@ export default function BookingWidget({
                   sm:pb-4
                 "
               >
-
                 <div className="flex items-center gap-2">
-
                   <div
                     className="
                       flex
@@ -277,7 +266,6 @@ export default function BookingWidget({
                   </div>
 
                   <div>
-
                     <h3 className="text-xs font-semibold text-gray-900 sm:text-sm">
                       Booking enquiry
                     </h3>
@@ -285,9 +273,7 @@ export default function BookingWidget({
                     <p className="text-[9px] text-gray-400 sm:text-[10px]">
                       Your details
                     </p>
-
                   </div>
-
                 </div>
 
                 <ShieldCheck
@@ -299,16 +285,11 @@ export default function BookingWidget({
                     sm:w-4
                   "
                 />
-
               </div>
 
-              {/* =================================================
-                  FORM FIELDS
-              ================================================= */}
+              {/* FORM FIELDS */}
 
               <div className="space-y-2 sm:space-y-3">
-
-                {/* FULL NAME */}
 
                 <Field label="Full Name" icon={User}>
                   <input
@@ -320,8 +301,6 @@ export default function BookingWidget({
                   />
                 </Field>
 
-                {/* WHATSAPP */}
-
                 <Field label="WhatsApp Number" icon={Phone}>
                   <input
                     type="tel"
@@ -331,8 +310,6 @@ export default function BookingWidget({
                     className={inputClasses}
                   />
                 </Field>
-
-                {/* EMAIL */}
 
                 <Field label="Email Address" icon={Mail}>
                   <input
@@ -344,37 +321,32 @@ export default function BookingWidget({
                   />
                 </Field>
 
-                {/* =================================================
-                    TRAVELLERS + TRAVEL MONTH
-                ================================================= */}
-
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
 
-                <Field label="Travellers" icon={Users}>
-  <input
-    type="number"
-    min="1"
-    step="1"
-    inputMode="numeric"
-    placeholder="No. of persons"
-    value={formData.NoOfPerson}
-    onChange={updateField("NoOfPerson")}
-    className={`${inputClasses} cursor-text`}
-  />
-</Field>
+                  <Field label="Travellers" icon={Users}>
+                    <input
+                      type="number"
+                      min="1"
+                      step="1"
+                      inputMode="numeric"
+                      placeholder="No. of persons"
+                      value={formData.NoOfPerson}
+                      onChange={updateField("NoOfPerson")}
+                      className={`${inputClasses} cursor-text`}
+                    />
+                  </Field>
 
-<Field label="Travel Month" icon={CalendarDays}>
-  <input
-    type="text"
-    placeholder="e.g. January"
-    value={formData.Month}
-    onChange={updateField("Month")}
-    className={`${inputClasses} cursor-text`}
-  />
-</Field>
+                  <Field label="Travel Month" icon={CalendarDays}>
+                    <input
+                      type="text"
+                      placeholder="e.g. January"
+                      value={formData.Month}
+                      onChange={updateField("Month")}
+                      className={`${inputClasses} cursor-text`}
+                    />
+                  </Field>
+
                 </div>
-
-                {/* MESSAGE */}
 
                 <Field label="Message" icon={MessageSquare}>
                   <textarea
@@ -388,9 +360,7 @@ export default function BookingWidget({
 
               </div>
 
-              {/* =================================================
-                  SUBMIT AREA
-              ================================================= */}
+              {/* SUBMIT AREA */}
 
               <div
                 className="
@@ -415,7 +385,6 @@ export default function BookingWidget({
                     sm:text-[10px]
                   "
                 >
-
                   <ShieldCheck
                     className="
                       h-3
@@ -428,8 +397,23 @@ export default function BookingWidget({
                   <span>
                     Your information is safe with us
                   </span>
-
                 </div>
+
+                {/* SUCCESS MESSAGE */}
+
+                {status === "success" && (
+                  <p className="mb-3 text-center text-xs font-medium text-green-600">
+                    Your enquiry has been submitted successfully!
+                  </p>
+                )}
+
+                {/* ERROR MESSAGE */}
+
+                {status === "error" && (
+                  <p className="mb-3 text-center text-xs font-medium text-red-600">
+                    Failed to submit enquiry. Please try again.
+                  </p>
+                )}
 
                 <button
                   type="button"
@@ -481,9 +465,7 @@ export default function BookingWidget({
 
             </div>
 
-            {/* ==================================================
-                SELECTED PACKAGE
-            ================================================== */}
+            {/* SELECTED PACKAGE */}
 
             <div className="lg:sticky lg:top-24">
 
@@ -499,9 +481,7 @@ export default function BookingWidget({
                 "
               >
 
-                {/* =================================================
-                    PACKAGE HEADER
-                ================================================= */}
+                {/* PACKAGE HEADER */}
 
                 <div
                   className="
@@ -516,7 +496,6 @@ export default function BookingWidget({
                 >
 
                   <div>
-
                     <p
                       className="
                         text-[9px]
@@ -532,7 +511,6 @@ export default function BookingWidget({
                     <h3 className="mt-0.5 text-sm font-semibold text-gray-900">
                       Package Selected
                     </h3>
-
                   </div>
 
                   <div
@@ -551,14 +529,10 @@ export default function BookingWidget({
 
                 </div>
 
-                {/* =================================================
-                    PACKAGE EXISTS
-                ================================================= */}
+                {/* PACKAGE EXISTS */}
 
                 {PackageId ? (
                   <div className="p-4">
-
-                    {/* IMAGE */}
 
                     <div className="relative overflow-hidden rounded-xl">
 
@@ -576,8 +550,6 @@ export default function BookingWidget({
                         "
                       />
 
-                      {/* IMAGE OVERLAY */}
-
                       <div
                         className="
                           absolute
@@ -588,8 +560,6 @@ export default function BookingWidget({
                           to-transparent
                         "
                       />
-
-                      {/* IMAGE TEXT */}
 
                       <div className="absolute bottom-3 left-3 right-3">
 
@@ -613,12 +583,9 @@ export default function BookingWidget({
 
                     </div>
 
-                    {/* PACKAGE INFO */}
-
                     <div className="mt-3 flex items-center justify-between">
 
                       <div>
-
                         <p className="text-[9px] uppercase tracking-wider text-gray-400">
                           Package
                         </p>
@@ -626,7 +593,6 @@ export default function BookingWidget({
                         <p className="mt-0.5 text-xs font-semibold text-gray-800">
                           {PackageId}
                         </p>
-
                       </div>
 
                       <span
@@ -648,9 +614,7 @@ export default function BookingWidget({
                   </div>
                 ) : (
 
-                  /* =================================================
-                     NO PACKAGE
-                  ================================================= */
+                  /* NO PACKAGE */
 
                   <div className="px-5 py-8 text-center">
 
@@ -682,9 +646,7 @@ export default function BookingWidget({
 
               </div>
 
-              {/* =================================================
-                  DESKTOP NOTE
-              ================================================= */}
+              {/* DESKTOP NOTE */}
 
               <div className="mt-3 hidden items-center gap-2 px-1 lg:flex">
 
@@ -735,9 +697,7 @@ export default function BookingWidget({
         "
       >
 
-        {/* ======================================================
-            HEADER
-        ====================================================== */}
+        {/* HEADER */}
 
         <div
           className="
@@ -795,9 +755,7 @@ export default function BookingWidget({
 
         </div>
 
-        {/* ======================================================
-            HOMEPAGE FORM CONTENT
-        ====================================================== */}
+        {/* HOMEPAGE FORM CONTENT */}
 
         <div className="px-3.5 py-4 sm:px-5 sm:py-5">
 
@@ -845,9 +803,7 @@ export default function BookingWidget({
 
           </div>
 
-          {/* ====================================================
-              FORM GRID
-          ==================================================== */}
+          {/* FORM GRID */}
 
           <div
             className="
@@ -860,8 +816,6 @@ export default function BookingWidget({
             "
           >
 
-            {/* NAME */}
-
             <Field label="Your Name" icon={User}>
               <input
                 type="text"
@@ -871,8 +825,6 @@ export default function BookingWidget({
                 className={inputClasses}
               />
             </Field>
-
-            {/* WHATSAPP */}
 
             <Field label="WhatsApp" icon={Phone}>
               <input
@@ -884,8 +836,6 @@ export default function BookingWidget({
               />
             </Field>
 
-            {/* EMAIL */}
-
             <Field label="Email" icon={Mail}>
               <input
                 type="email"
@@ -895,8 +845,6 @@ export default function BookingWidget({
                 className={inputClasses}
               />
             </Field>
-
-            {/* TRAVELLERS */}
 
             <Field label="Travellers" icon={Users}>
               <input
@@ -909,8 +857,6 @@ export default function BookingWidget({
               />
             </Field>
 
-            {/* TRAVEL MONTH */}
-
             <Field label="Travel Month" icon={CalendarDays}>
               <input
                 type="month"
@@ -919,8 +865,6 @@ export default function BookingWidget({
                 className={inputClasses}
               />
             </Field>
-
-            {/* MESSAGE */}
 
             <Field label="Message" icon={MessageSquare}>
               <input
@@ -934,9 +878,7 @@ export default function BookingWidget({
 
           </div>
 
-          {/* ====================================================
-              SUBMIT
-          ==================================================== */}
+          {/* SUBMIT */}
 
           <div
             className="
@@ -973,6 +915,22 @@ export default function BookingWidget({
               </span>
 
             </div>
+
+            {/* SUCCESS MESSAGE */}
+
+            {status === "success" && (
+              <p className="text-center text-xs font-medium text-green-600">
+                Your enquiry has been submitted successfully!
+              </p>
+            )}
+
+            {/* ERROR MESSAGE */}
+
+            {status === "error" && (
+              <p className="text-center text-xs font-medium text-red-600">
+                Failed to submit enquiry. Please try again.
+              </p>
+            )}
 
             <button
               type="button"
