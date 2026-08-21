@@ -225,7 +225,7 @@ export default function ValuedPilgrims() {
                     poster={item.poster}
                     controls
                     playsInline
-                    preload="none"
+                    preload="metadata"
                     loading="lazy"
                     onPlay={() => setPlaying(index, true)}
                     onPause={() => setPlaying(index, false)}
