@@ -14,7 +14,7 @@ import {
   MapPin,
 } from "lucide-react";
 
-import { Bookingapi } from "../../environment";
+import { Bookingapi } from "../../environemnt";
 
 /* ============================================================
    FIELD COMPONENT

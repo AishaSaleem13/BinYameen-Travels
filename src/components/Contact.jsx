@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Bookingapi } from "../../environment";
+import { Bookingapi } from "../../environemnt";
 import Image from "next/image";
 
 export default function ContactUs() {

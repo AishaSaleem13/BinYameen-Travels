@@ -17,7 +17,7 @@ import {
   Plane,
 } from "lucide-react";
 
-import { Customizeapi } from "../../environment";
+import { Customizeapi } from "../../environemnt";
 
 const Field = ({ label, icon: Icon, children }) => (
   <div
