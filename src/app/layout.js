@@ -29,9 +29,50 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Bin Yameen Travels",
+  metadataBase: new URL("https://binyameentravel.pk"),
+
+  title: {
+    default: "Bin Yameen Travels | Umrah & Travel Packages in Pakistan",
+    template: "%s | Bin Yameen Travels",
+  },
+
+
   description:
-    "Experience the best Umrah and northern Pakistan tours with Bin Yameen Travels.",
+    "Explore Umrah, northern Pakistan and international travel packages with Bin Yameen Travels. Plan your journey with trusted travel services from Pakistan.",
+
+  keywords: [
+    "Bin Yameen Travels",
+    "Umrah packages Pakistan",
+    "Umrah packages Karachi",
+    "Umrah travel agency",
+    "Northern Pakistan tours",
+    "Pakistan travel packages",
+    "international tour packages",
+  ],
+
+  authors: [{ name: "Bin Yameen Travels" }],
+  creator: "Bin Yameen Travels",
+  publisher: "Bin Yameen Travels",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  openGraph: {
+    title: "Bin Yameen Travels | Umrah & Travel Packages in Pakistan",
+    description:
+      "Explore Umrah, northern Pakistan and international travel packages with Bin Yameen Travels.",
+    url: "https://binyameentravel.pk",
+    siteName: "Bin Yameen Travels",
+    locale: "en_PK",
+    type: "website",
+   
+  },
 };
 
 export default function RootLayout({ children }) {

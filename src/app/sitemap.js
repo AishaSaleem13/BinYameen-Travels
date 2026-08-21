@@ -1,42 +1,36 @@
 export default function sitemap() {
-  const baseUrl = "https://binyameentravel.pk";
-
   return [
     {
-      url: baseUrl,
+      url: "https://binyameentravel.pk",
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
     },
     {
-      url: `${baseUrl}/aboutpage`,
+      url: "https://binyameentravel.pk/aboutpage",
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
-      url: `${baseUrl}/Contact`,
+      url: "https://binyameentravel.pk/Contact",
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
     },
     {
-      url: `${baseUrl}/umrahpackages`,
+      url: "https://binyameentravel.pk/umrahpackages",
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
     },
     {
-      url: `${baseUrl}/internationalpage`,
+      url: "https://binyameentravel.pk/internationalpage",
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
     },
     {
-      url: `${baseUrl}/Northtour`,
+      url: "https://binyameentravel.pk/Northtour",
       lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
+    },
+    {
+      url: "https://binyameentravel.pk/BookingForm",
+      lastModified: new Date(),
+    },
+    {
+      url: "https://binyameentravel.pk/Customize",
+      lastModified: new Date(),
     },
   ];
 }
