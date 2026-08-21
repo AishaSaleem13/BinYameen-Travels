@@ -102,7 +102,7 @@ export default function Footer() {
             {/* Contact */}
             <div className="space-y-4">
               <a
-                href="tel:03110405147"
+                href="tel:+92 342 2673475"
                 className="group flex items-center gap-3"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#800E13] transition-colors group-hover:bg-[#a51219]">
@@ -124,7 +124,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:info@binyameen.6363@gmail.com"
+                href="mailto:binyameen.6363@gmail.com"
                 className="group flex items-center gap-3"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors group-hover:bg-white/20">

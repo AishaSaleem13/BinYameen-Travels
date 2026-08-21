@@ -308,45 +308,48 @@ function AboutUsGrid() {
 
         {/* Country cards */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {countries.map((item, index) => (
-            <div
-              key={item.id}
-              className="group relative h-60 overflow-hidden rounded-2xl shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:h-64 lg:h-72"
-            >
-              <Image
-                src={item.image}
-                alt={item.name}
-            fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                
-                className="object-cover h-full w-full transition duration-500 group-hover:scale-105"
-              />
+       {countries.map((item, index) => (
+  <div
+    key={item.id}
+    onClick={() => setSelectedCountry(item)}
+    className="group relative h-60 cursor-pointer overflow-hidden rounded-2xl shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:h-64 lg:h-72"
+  >
+    <Image
+      src={item.image}
+      alt={item.name}
+      fill
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+    />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
-              <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-xs font-semibold text-white backdrop-blur-sm">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+    <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-xs font-semibold text-white backdrop-blur-sm">
+      {String(index + 1).padStart(2, "0")}
+    </span>
 
-              <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-700">
-                {item.places.length} Experiences
-              </span>
+    <span className="absolute right-4 top-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wide text-slate-700">
+      {item.places.length} Experiences
+    </span>
 
-              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5">
-                <h3 className="font-serif text-2xl font-semibold text-white">
-                  {item.name}
-                </h3>
+    <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5">
+      <h3 className="font-serif text-2xl font-semibold text-white">
+        {item.name}
+      </h3>
 
-                <button
-                  onClick={() => setSelectedCountry(item)}
-                  aria-label={`View details for ${item.name}`}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-slate-900 transition hover:bg-[#800E13] hover:text-white"
-                >
-                  <ArrowUpRight size={18} />
-                </button>
-              </div>
-            </div>
-          ))}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          setSelectedCountry(item);
+        }}
+        aria-label={`View details for ${item.name}`}
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-slate-900 transition hover:bg-[#800E13] hover:text-white"
+      >
+        <ArrowUpRight size={18} />
+      </button>
+    </div>
+  </div>
+))}
         </div>
 
         {/* Selected country */}
