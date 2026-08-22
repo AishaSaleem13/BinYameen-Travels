@@ -159,7 +159,7 @@ export default function UmrahPage() {
           {/* CTA */}
           <div className="text-center">
             <a
-              href="#packages"
+              
               className="inline-block bg-[#6E1423] px-6 py-3.5 text-[10px] font-medium uppercase tracking-[0.14em] text-[#FAF3E7] transition-colors hover:bg-[#4A0D18] sm:px-9 sm:py-4 sm:text-[12.5px]"
             >
               See Package Details ↓
