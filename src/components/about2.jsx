@@ -439,7 +439,7 @@ export default function Hero() {
               >
 
                 <Image
-                  src="/Yameen.jpeg"
+                  src="/Yameen.webp"
                   alt="Muhammad Yameen - Founder of Bin Yameen Travels"
                   fill
                   className="object-cover "
